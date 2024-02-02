@@ -1,0 +1,69 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+
+using namespace std;
+int N=0;
+vector<vector<int>> grid;
+vector<vector<bool>> visited;
+int obsCount;
+vector<int> obsTotal;
+
+bool dfs(vector<vector<int>> & grid, vector<vector<bool>>& visited, int row, int col){
+	int rows = grid.size();
+	int cols = grid[0].size();
+
+	visited[row][col] = true;
+
+	vector<int> dx = {-1, 1, 0, 0};
+	vector<int> dy = {-1, 1, 0, 0};
+
+	for(int i =0; i<4; i++){
+		int searchRow = row + dx[i];
+		int searchCol = col + dy[i];
+
+		if(searchRow >= 0 && searchRow < rows && searchCol >=0 && searchCol<cols){
+			if(grid[searchRow][searchCol] == 0 && !visited[searchRow][searchCol]){
+				if(dfs(grid,visited,searchRow,searchCol))
+				obsCount++;
+				
+			}
+		}
+	}	
+	return true;
+}
+
+int main()
+{
+	cin >> N;
+	grid = vector<vector<int>>(N,vector<int>(N,0));
+	visited = vector<vector<bool>>(N, vector<bool>(N, false));
+
+	for(int i=0; i<N; i++){
+		for(int j = 0; j<N; j++){
+			scanf("%01d", &grid[i][j]);
+		}
+	}
+
+	for(int i=0; i<N; i++){
+		for(int j=0; j<N; j++){
+			if(visited[i][j] || grid[i][j] == 0)
+				continue;
+			visited[i][j] = true;
+			obsCount = 1;
+			dfs(grid, visited, i, j);
+			obsTotal.push_back(obsCount);
+		}
+	}
+
+	sort(obsTotal.begin(), obsTotal.end());
+	cout << (int)obsTotal.size() << endl;
+	
+
+	for(auto &v: obsTotal){
+		cout << v << endl;
+		
+	}
+	return 0;
+}
