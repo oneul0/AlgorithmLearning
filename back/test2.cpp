@@ -6,7 +6,7 @@
 using namespace std;
 
 bool cmp(char c1, char c2){
-    if(atoi(c1) == atoi(c2)) return 
+    if(atoi(c1) == atoi(c2)) return FALSE;
 }
 
 int main() {
