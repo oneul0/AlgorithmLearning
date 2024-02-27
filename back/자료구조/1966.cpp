@@ -2,48 +2,43 @@
 #include <queue>
 
 using namespace std;
-
-
-int T, N, M, P = 0, doc, ans;
-
-struct cmp
-{
-    bool operator()(pair<int, int>&a, pair<int, int>&b){
-        if(a.second == b.second){
-            return a.first > b.first;
-        }
-        else{
-            return a.second < b.second;
-        }
-        
-    }
-};
-
+int T, n, m, p,cnt = 0;
 
 int main(){
+    ios_base::sync_with_stdio(0);cin.tie(0);
     cin >> T;
-    while(T--){
-        ans = 0;
-        priority_queue<pair<int,int>,vector<pair<int,int>>, cmp> pq;
-        cin >> N >> M;
-        for(int i = 0; i<N; i++){
-            cin >> doc;
-            pq.push(make_pair(i,doc));
+    for(int i = 0; i<T; i++){
+        queue<pair<int,int>> docs;
+        priority_queue<int> maxQ;
+        cnt = 0;
+        cin >> n >> m;
+        for(int j = 0; j<n; j++){
+            cin >> p;
+            docs.push({j,p}); //j = 문서 번호 p = 문서 우선순위
+            maxQ.push(p);
         }
-// while(!pq.empty()){
-//         cout << pq.top().first << pq.top().second << endl;
-//         pq.pop();
-//     }
-        while(!pq.empty()){
-            int tmp = pq.top().first;
-            pq.pop();
-            ans++;
-            if(tmp == M){
-                cout << ans<<'\n';
-            }
-        }
-        
+        while(!docs.empty()){
+            pair<int,int> t = docs.front();
+            int maxI = maxQ.top();
+            docs.pop();
+            
+            //cout << "docs num : "<< t.first << " cnt : "<< cnt <<" ";
+            if(t.second == maxI){
+                cnt++;
+                if(t.first == m){
+                    cout << cnt <<"\n";
+                    break;
+                }
+                
 
+                maxQ.pop();
+            }
+            else{
+                docs.push(t);
+            }
+            
+        }
     }
+
     return 0;
 }

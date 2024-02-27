@@ -1,26 +1,12 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-
 using namespace std;
 
-bool cmp(char c1, char c2){
-    if(atoi(c1) == atoi(c2)) return FALSE;
-}
-
-int main() {
-    string s;
-    int n;
-    vector<string> v;
-    cin >> n;
-    v.resize(n);
-    for(int i = 0; i<n; i++){
-        cin >> v[i];
-    }
+int main(void)
+{
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    int cnt=0,a,b;
+    cin >> a;
+    a &= 1;
     
-
-
-
-	return 0;
+    cout << a;
 }

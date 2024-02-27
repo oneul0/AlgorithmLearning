@@ -1,56 +1,23 @@
-#include<iostream>
+#include <iostream>
 #include <vector>
-#include <climits>
+#include <algorithm>
 using namespace std;
-int n;
 
-vector<vector<int>> v;
+int a;
 
-#define INF INT_MAX
-
-void Floyd()
-{   
-    for(int k=0;k<n;k++)
-    {   
-        for(int i=0;i<n;i++)
-        {   
-            for(int j=0;j<n;j++)
-            {   
-                v[i][j] =min(v[i][j],v[i][k]+v[k][j]);
-            }
-        }
+int main(){
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    cin >> a;
+    int* arr = new int[a]{1,2,3,4,5};
+    cout << a<<" ";
+cout << '\n';
+    for(int i = 0; i<a; i++){
+        cout << arr[i] <<" ";
     }
-}
-
-int main()
-{   cin>>n;
-
-    v.resize(n);
-
-    for(int i=0;i<n;i++)
-    {   for(int j=0;j<n;j++){
-            int t;
-            cin>>t;
-            v[i].push_back(t);
-        }
-        
+    cout << '\n';
+    delete[] arr;
+    for(int i = 0; i<a; i++){
+        cout << arr[i] <<" ";
     }
-    for(int i=0;i<n;i++)
-    {   
-        for(int j=0;j<n;j++)
-        {   
-            if(v[i][j]==0)
-            v[i][j]=INF;
-        }
-    }
-    
-    Floyd();
-    for(int i=0;i<n;i++)
-    {   for(int j=0;j<n;j++)
-        {   
-            if(v[i][j]==INF) cout<<0<<' ';
-            else cout<<1<<' ';
-        }
-        cout<<'\n';
-    }
+    return 0;
 }
