@@ -8,7 +8,7 @@ int seq[9] = {0};
 bool visited[9] = {0};
 
 void dfs(int idx){
-    cout << "seq : "<<<<" ";
+    //cout << "seq : "<<" ";
     if(idx == m){
         for(int i = 0; i<m; i++)
             cout << seq[i] << ' ';
@@ -17,7 +17,6 @@ void dfs(int idx){
     }
     
     for(int i = 1; i<=n; i++){
-        
         if(!visited[i]){
             visited[i] = true;
             seq[idx] = i;

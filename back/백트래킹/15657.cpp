@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 int n,m;
@@ -6,7 +9,6 @@ int seq[9] = {0};
 bool visited[9] = {0};
 vector<int> v;
 void dfs(int num, int idx){
-    
     if(idx == m){
         for(int i = 0; i<m; i++){
             cout << seq[i] << " ";   
@@ -15,16 +17,13 @@ void dfs(int num, int idx){
         return;
     }
     for(int i = num; i<n; i++){
-        visited[i] = false;
         if(!visited[i]){
-            visited[i] = true;
+            //visited[i] = true;
             seq[idx] = v[i];
-            dfs(i+1,idx+1);
-            
+            dfs(i,idx+1); 
         }
-        
+        //visited[i] = false;
     }
-
 }
 
 int main(){
@@ -35,6 +34,5 @@ int main(){
         cin >> v[i];
     sort(v.begin(), v.end());
     dfs(0, 0);
-
     return 0;
 }
