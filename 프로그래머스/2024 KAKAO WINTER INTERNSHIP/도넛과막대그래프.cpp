@@ -11,72 +11,28 @@ using namespace std;
 //끝이 비어있으면 막대 그래프
 //2개면 8자모양 그래프
 
-void nodeOrder(set<int>& nodeSet, vector<vector<int>> edges){
-    for(auto line : edges)
-        for(auto node : line)
-            nodeSet.insert(node);
-}
-
-void fillGraph(vector<vector<int>>& graph,vector<bool>& visited, vector<vector<int>> edges){
-    for(int i = 0; i<edges.size(); i++){
-        graph[edges[i][0]].push_back(edges[i][1]);
-        visited[edges[i][0]] = false;
-    }
-        
-}
-
-
-void dfs(vector<vector<int>> graph, int pos, vector<bool>& visited, vector<int>& answer){
-    stack<int> st;
-    st.push(pos);
-    int lastVisitedNode = 0;
-    while(!st.empty()){
-        int cur = st.top();
-        st.pop();
-        lastVisitedNode = cur;
-        for(int n : graph[cur]){
-            if(!visited[n]){
-                visited[n] = true;
-                st.push(n);
-            }
-        }
-    }
-    visited[pos] = false;
-    //판단
-    //간선의 수가 한개인가 두개인가
-    if(graph[pos].size() == 1){
-        //1. 간선의 끝이 자기 자신을 가리킬 때
-        if(pos == lastVisitedNode) answer[1]+=1;
-        //2. 간선의 노드가 가리키는 노드가 없을 때
-        else answer[2]+=1;
-    }
-    else if(graph[pos].size() == 2){
-        answer[3]+=1;
-    }
-    
-}
-
 vector<int> solution(vector<vector<int>> edges) {
     vector<int> answer(4,0);
-    int startNode = 0;
-    //중복없이 노드 추출 위한 set
-    set<int> nodeSet;
-    nodeOrder(nodeSet, edges);
-    //그래프
-    int lastNode = *nodeSet.rbegin();
-    vector<vector<int>> graph(lastNode+1);
-    vector<bool> visited(lastNode+1,true);
-    fillGraph(graph,visited, edges);
-    for(int i = 1; i<=graph.size(); i++){
-        if(!visited[i]){
-            if(graph[i].size() > 2) startNode = i; // 이거 아님 시작노드 어케구하지
+    int verticesNum = 0;
+    for(const auto& edge : edges){
+        verticesNum = max(verticesNum, max(edge[0], edge[1]));
+    }
+    vector<pair<int,int>> nodeIO(verticesNum+1, {0,0}); //in out
+    for(int i = 0; i<edges.size(); i++){
+        nodeIO[edges[i][0]].second += 1;
+        nodeIO[edges[i][1]].first += 1;
+    }
+
+    for(int i = 1; i<nodeIO.size(); i++){
+        if(nodeIO[i].second == 0) answer[2] +=1;
+        else if(nodeIO[i].second == 1) continue;
+        else if(nodeIO[i].second == 2){
+            if(nodeIO[i].first >0) answer[3] +=1;
+            else answer[0] = i;
         }
+        else answer[0] = i;
     }
-    answer[0] = startNode;
-    for(auto node : graph[startNode]){
-        dfs(graph, node, visited,answer);
-    }
-    
+    answer[1] = nodeIO[answer[0]].second - answer[2] - answer[3];
     return answer;
 }
 
