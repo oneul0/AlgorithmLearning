@@ -50,7 +50,13 @@
         "xmemory": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "set": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "cmake.configureOnOpen": false
 }
