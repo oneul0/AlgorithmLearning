@@ -22,13 +22,9 @@ vector<vector<int>> solution(int n){
 			else dir++;
 			nx = cx+direct[dir][0];
 			ny = cy+direct[dir][1];
-			cx = nx;
-			cy = ny;
 		}
-		else{
-			cx = nx;
-			cy = ny;
-		}
+		cx = nx;
+		cy = ny;
 		ans[cx][cy] = cnt;
 	}
 	 
@@ -37,6 +33,7 @@ vector<vector<int>> solution(int n){
 
 int main(int argc, char** argv)
 {
+	ios_base::sync_with_stdio(false); cin.tie(nullptr);
 	int test_case;
 	
 	cin>>T;
