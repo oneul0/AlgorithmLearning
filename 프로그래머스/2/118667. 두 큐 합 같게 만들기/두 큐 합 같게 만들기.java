@@ -19,20 +19,16 @@ class Solution {
         while (sum1 != sum2) {
             if(answer> queue1.length+queue2.length+1) return -1;
             if (sum1 > sum2) {
-                q2.add(q1.peek());
                 sum1 -= q1.peek();
                 sum2 += q1.peek();
-                q1.remove();
+                q2.add(q1.remove());
             } else if (sum1 < sum2) {
-                q1.add(q2.peek());
                 sum2 -= q2.peek();
                 sum1 += q2.peek();
-                q2.remove();
+                q1.add(q2.remove());
             }
             answer++;
         }
-
-
         return answer;
     }
 }
