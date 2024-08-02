@@ -30,40 +30,30 @@ public class Main {
             }
         }
 
-
         // 벽을 세우는 조합 생성
-        combine(0, deepCopy(lab));
+        combine(0,0, lab);
 
         // 안전 영역의 최대
         int answer = results.stream().mapToInt(Integer::intValue).max().orElse(0);
         bw.write(String.valueOf(answer));
         bw.flush();
     }
-    static int[][] deepCopy(int[][] original) {
-        int[][] copy = new int[N][M];
-        for (int i = 0; i < original.length; i++) {
-            for (int j = 0; j < original[i].length; j++) {
-                copy[i][j] = original[i][j];
-            }
-        }
-        return copy;
-    }
 
     // 벽을 세우는 조합 생성
-    static void combine(int depth, int[][] lab) {
+    static void combine(int depth, int start, int[][] lab) {
         if (depth == 3) {
             // 벽을 세운 후 바이러스 퍼뜨리기
             results.add(bfs(lab));
             return;
         }
 
-        for (int x = 0; x < N; x++) {
-            for (int y = 0; y < M; y++) {
-                if (lab[x][y] == 0) {
-                    lab[x][y] = 1; // 벽 세우기
-                    combine(depth + 1, lab);
-                    lab[x][y] = 0; // 상태 복원
-                }
+        for (int i = start; i < N * M; i++) {
+            int x = i / M;
+            int y = i % M;
+            if (lab[x][y] == 0) {
+                lab[x][y] = 1; // 벽 세우기
+                combine(depth + 1,i + 1, lab);
+                lab[x][y] = 0; // 상태 복원
             }
         }
     }
@@ -81,7 +71,7 @@ public class Main {
         }
 
         while (!q.isEmpty()) {
-            Pair cur = q.remove();
+            Pair cur = q.poll();
             int x = cur.getX();
             int y = cur.getY();
 
@@ -97,7 +87,7 @@ public class Main {
             }
         }
         cnt += 3;
-        return maxSafeTileCount-cnt; // 전체 안전지대에서 바이러스 퍼진 곳과 벽 세운 곳 뺀 값 반환
+        return maxSafeTileCount-cnt; // 퍼뜨린 바이러스 수 반환
     }
 }
 
