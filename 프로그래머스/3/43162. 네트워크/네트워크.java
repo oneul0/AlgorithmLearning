@@ -1,30 +1,50 @@
+import java.util.*;
 class Solution {
-    int[][] computers;
+    ArrayList<ArrayList<Integer>> gr = new ArrayList<>();
+    int n = 0;
     boolean[] chk;
-    int answer = 0;
     public int solution(int n, int[][] computers) {
-        chk = new boolean[n];
-        this.computers = computers;
-        //dfs
-
-        for(int i = 0; i < n; i++) {
+        int answer = 0;
+        this.n = n;
+        chk =  new boolean[n];
+        for(int i = 0; i<computers.length; i++){
+            gr.add(new ArrayList<>());
+        }
+        
+        for(int i = 0; i<computers.length; i++){
+            for(int j = 0; j<computers[i].length; j++){
+                if(computers[i][j] == 1) {
+                    gr.get(i).add(j);
+                    gr.get(j).add(i);
+                }
+            }
+        }
+        
+        for(int i = 0; i<n; i++){
             if(!chk[i]){
-                chk[i] = true;
-                dfs(i);
+                bfs(i);
                 answer++;
             }
-
         }
-
+        
         return answer;
     }
-
-    void dfs(int cur){
-        chk[cur] = true;
-        for(int i = 0; i <computers[cur].length; i++){
-            if(!chk[i] && computers[cur][i] == 1) {
-                dfs(i);
+    
+    void bfs(int sx){
+        Queue<Integer> q = new ArrayDeque<>();
+        
+        q.add(sx);
+        chk[sx] = true;
+        
+        while(!q.isEmpty()){
+            int cx = q.remove();
+            for(int nxt : gr.get(cx)){
+                if(!chk[nxt]){
+                    q.add(nxt);
+                    chk[nxt] = true;
+                }
             }
         }
+        
     }
 }
