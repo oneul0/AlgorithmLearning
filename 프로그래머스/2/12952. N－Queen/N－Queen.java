@@ -1,26 +1,29 @@
+
 class Solution {
-    int answer = 0;
+    int answer = 0, n;
     public int solution(int n) {
-        dfs(new int[n], 0);
+        this.n = n;
+        backtracking(0, new int[n]);
         return answer;
     }
-    void dfs(int[] queens, int row){
-        if(row == queens.length){
+    
+    void backtracking(int depth, int[] chk){
+        if(depth == n){
             answer++;
             return;
         }
-
-        for(int col = 0; col < queens.length; col++){
-            if(isPossible(queens, row, col)){
-                queens[row] = col;
-                dfs(queens, row+1);
+        for(int i = 0; i<n; i++){
+            if(isPossible(chk, depth, i)){
+                chk[depth] = i;
+                backtracking(depth+1, chk);
             }
         }
     }
-
-    boolean isPossible(int[] queens, int row, int col){
-        for(int i = 0; i< row; i++){
-            if(queens[i] == col || Math.abs(queens[i] - col) == Math.abs(i-row)) return false;
+    
+    boolean isPossible(int[] chk, int row, int col){
+        for(int i = 0; i<row; i++){
+            if(chk[i] == col) return false;
+            if(Math.abs(chk[i] - col) == Math.abs(i - row)) return false;
         }
         return true;
     }
