@@ -1,31 +1,34 @@
 import java.util.*;
 class Solution {
+    int[] arrA, arrB;
     public int solution(int[] arrayA, int[] arrayB) {
+        this.arrA = arrayA;
+        this.arrB = arrayB;
+        
         int answer = 0;
-        int a = getGcd(arrayA);
-        int b = getGcd(arrayB);
+        int a = findGcd(arrA);
+        int b = findGcd(arrB);
         
-        boolean fA = a != 1 && Arrays.stream(arrayB).allMatch(i -> i%a != 0);
-        boolean fB = b != 1 && Arrays.stream(arrayA).allMatch(i -> i%b != 0);
-        
-        if(fA && fB) return Math.max(a,b);
-        if(fA) return a;
-        if(fB) return b;
+        boolean findA = a != 1 && Arrays.stream(arrB).allMatch(o -> o%a != 0);
+        boolean findB = b != 1 && Arrays.stream(arrA).allMatch(o -> o%b != 0);
+        if(findA && findB) return Math.max(a,b);
+        if(findA) return a;
+        if(findB) return b;
         
         return answer;
     }
     
-    int getGcd(int[] arr){
-        int result = arr[0];
-        for(int i = 1; i<arr.length; i++){
-            result = gcd(result, arr[i]);
-            if(result == 1) break;
+    int findGcd(int[] arr){
+        int res = arr[0];
+        for(int i = 0; i<arr.length; i++){
+            res = gcd(res, arr[i]);
+            if(res == 1) break;
         }
-        return result;
+        return res;
     }
     
     int gcd(int a, int b){
-        while(b!=0){
+        while(b != 0){
             int c = b;
             b = a%b;
             a = c;
@@ -33,5 +36,3 @@ class Solution {
         return a;
     }
 }
-
-// 각 집합의 최대 공약수 중 서로의 집합의 요소를 나눌 수 없는 것
