@@ -14,7 +14,6 @@ class Solution {
         while(!pq.isEmpty()){
             int t = pq.remove();
             answer += (t*t);
-            System.out.println(t);
         }
         return answer;
     }
