@@ -24,7 +24,7 @@ public class Main {
                 ans = Math.min(ans, cur[1]);
                 break;
             }
-            for(int i : new int[]{cur[0]-1, cur[0]+1, cur[0]*2}){
+            for(int i : new int[]{cur[0]*2, cur[0]-1, cur[0]+1}){
                 if(isValid(i, chk)) {
                     chk[i] = true;
                     q.offer(new int[]{i, cur[1]+1});
