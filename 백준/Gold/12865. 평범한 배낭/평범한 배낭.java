@@ -3,70 +3,42 @@ import java.util.*;
 
 public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) throws Exception{
+        StringTokenizer st= new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int[][] dp = new int[N+1][K+1];
 
-    public static void main(String[] args) throws IOException {
-        // 입력 처리
-        String[] input = br.readLine().split(" ");
-        int n = Integer.parseInt(input[0]);
-        int maxWeight = Integer.parseInt(input[1]);
+        ArrayList<Pair> arr= new ArrayList<>();
 
-        ArrayList<Pair<Integer, Integer>> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            String[] item = br.readLine().split(" ");
-            int weight = Integer.parseInt(item[0]);
-            int value = Integer.parseInt(item[1]);
-            list.add(new Pair<>(weight, value));
+        for(int i = 0; i<N; i++){
+            st = new StringTokenizer(br.readLine());
+            arr.add(new Pair(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
         }
 
-        // dp 배열 초기화
-        int[][] dp = new int[n + 1][maxWeight + 1];
-
-        // DP 알고리즘
-        for (int i = 1; i <= n; i++) {
-            int k = list.get(i - 1).getFirst();
-            int v = list.get(i - 1).getSecond();
-            for (int j = 0; j <= maxWeight; j++) {
-                if (k > j) {
-                    dp[i][j] = dp[i - 1][j];
-                } else {
-                    dp[i][j] = Math.max(dp[i - 1][j], v + dp[i - 1][j - k]);
-                }
+        for(int i = 1; i<=N; i++){
+            int w = arr.get(i-1).W;
+            int v = arr.get(i-1).V;
+            
+            for(int j = 0; j<= K; j++){
+                if(w>j) dp[i][j] = dp[i-1][j];
+                else dp[i][j] = Math.max(dp[i-1][j], v+dp[i-1][j-w]);
             }
         }
-
-        // 결과 출력
-        bw.write(String.valueOf(dp[n][maxWeight]));
-        bw.newLine();
-
-        br.close();
+        
+        bw.write(dp[N][K]+"");
         bw.flush();
         bw.close();
+        br.close();
+        
     }
 }
 
-class Pair<K, V> {
-    private K first;
-    private V second;
-
-    public Pair(K first, V second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public K getFirst() {
-        return first;
-    }
-
-    public V getSecond() {
-        return second;
-    }
-
-    public void setFirst(K first) {
-        this.first = first;
-    }
-
-    public void setSecond(V second) {
-        this.second = second;
+class Pair{
+    int W, V;
+    Pair(int W, int V){
+        this.W = W;
+        this.V = V;
     }
 }
