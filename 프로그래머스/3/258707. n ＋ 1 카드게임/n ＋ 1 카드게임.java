@@ -16,6 +16,7 @@ class Solution {
         }
         
         int answer = 1;
+        //게임 시작
         for(int i = n3; i<n; i+=2){
             if(coinLeft > 0){
                 hand[cards[i]] = true;
@@ -25,10 +26,11 @@ class Solution {
             boolean pass = false; //낼 수 있는 카드 쌍이 있는지
             int minCost = 3; // 가능한 가장 큰 비용은 2이므로 3으로 초기화
             int cardThrown = -1; //버릴 카드 번호
+            //비용 산정 및 통과할 수 있는지 체크(1~현재 라운드까지)
             for(int j = 1; j<=n; j++){
                 if(!hand[j]) continue; //손패에 없으면 continue
                 
-                if(hand[n+1-j]){ //낼 수 있는 비용인지
+                if(hand[n+1-j]){ //낼 수 있는 비용의 카드인지
                     int cost = (paid[j] ? 0 : 1) + (paid[n+1-j] ? 0:1);
                     if(coinLeft < cost || minCost <= cost) continue;
                     
