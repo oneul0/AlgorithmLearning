@@ -21,16 +21,20 @@ class Solution {
             for (int i = 1; i < usedN; i++) {
                 for (Integer num1 : dp.get(i)) {
                     for (Integer num2 : dp.get(usedN - i)) {
+                        int plus = num1 + num2;
+                        int minus = num1 - num2;
+                        int multi = num1 * num2;
+                        int divide = (num2 != 0 ? num1 / num2 : 0);
                         // 사칙연산
-                        dp.get(usedN).add(num1 + num2);
-                        dp.get(usedN).add(num1 - num2);
-                        dp.get(usedN).add(num1 * num2);
-                        if (num2 != 0) dp.get(usedN).add(num1 / num2);
+                        dp.get(usedN).add(plus);
+                        dp.get(usedN).add(minus);
+                        dp.get(usedN).add(multi);
+                        if (divide != 0) dp.get(usedN).add(divide);
 
-                        if (num1 + num2 == number || 
-                            num1 - num2 == number || 
-                            num1 * num2 == number || 
-                            (num2 != 0 && num1 / num2 == number)) {
+                        if (plus == number || 
+                            minus == number || 
+                            multi == number || 
+                            (divide != 0 && num1 / num2 == number)) {
                             return usedN;
                         }
                     }
