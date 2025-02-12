@@ -24,7 +24,7 @@ class Solution {
             }
             else{
                 if(cnt>1){
-                    compressedText.append(String.valueOf(cnt));
+                    compressedText.append(cnt+"");
                 }
                 compressedText.append(prevWord);
                 prevWord = word;
@@ -32,7 +32,7 @@ class Solution {
             }
         }
         if(cnt>1){
-            compressedText.append(String.valueOf(cnt));
+            compressedText.append(cnt+"");
         }
         compressedText.append(prevWord);
         return compressedText.toString().length();
