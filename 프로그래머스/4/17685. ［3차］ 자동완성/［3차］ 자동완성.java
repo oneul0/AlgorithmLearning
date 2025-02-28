@@ -49,10 +49,11 @@ public class Solution {
         public int countPrefix(String word) {
             Node node = root;
             int inputCount = 0;
+            //단어의 끝을 봤을 때
             for (char ch : word.toCharArray()) {
                 node = node.child.get(ch);
                 inputCount++;
-                if (node.count == 1) { //말단 노드 도착
+                if (node.count == 1) { //이후 노드가 외자식
                     break;
                 }
             }
