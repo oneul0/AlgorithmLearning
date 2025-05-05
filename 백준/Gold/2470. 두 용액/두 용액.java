@@ -1,39 +1,35 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static int[] arr;
-    public static void main(String[] args) throws Exception {
-        int N = Integer.parseInt(br.readLine());
-        arr = new int[N];
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr);
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int l = 0, r = N - 1;
-        int min = Integer.MAX_VALUE;
-        int n1 = 0, n2 = 0;
+	public static void main(String[] args) throws IOException {
+		int N = Integer.parseInt(br.readLine());
+		int[] arr = new int[N];
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int i = 0; i<N; i++){
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
 
-        while (l < r) {
-            int sum = arr[l] + arr[r];
-            if (Math.abs(sum) < min) {
-                min = Math.abs(sum);
-                n1 = arr[l];
-                n2 = arr[r];
-            }
+		Arrays.sort(arr);
 
-            if (sum < 0) {
-                l++;
-            } else {
-                r--;
-            }
-        }
+		int l = 0, r = arr.length-1, goal = Integer.MAX_VALUE, tmpL = 0, tmpR = 0;
+		while(l<r){
+			int sum = arr[l] + arr[r];
+			if(Math.abs(sum) < goal){
+				goal = Math.abs(sum);
+				tmpL = l;
+				tmpR = r;
+			}
+			else if(sum < 0){
+				l++;
+			}
+			else{
+				r--;
+			}
+		}
 
-        bw.write(n1 + " " + n2);
-        bw.flush();
-    }
+		System.out.print(arr[tmpL]+" "+arr[tmpR]);
+	}
 }
