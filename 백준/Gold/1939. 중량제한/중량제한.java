@@ -36,7 +36,7 @@ public class Main {
 	static int dijkstra() {
 		int[] maxWeight = new int[N + 1];
 		boolean[] visited = new boolean[N + 1];
-		PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> o2.cost - o1.cost); // 내림차순
+		PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> o2.cost - o1.cost);
 
 		pq.offer(new Node(start, Integer.MAX_VALUE));
 		maxWeight[start] = Integer.MAX_VALUE;
@@ -62,7 +62,7 @@ public class Main {
 
 		return maxWeight[goal];
 	}
-	
+
 }
 
 class Node{
