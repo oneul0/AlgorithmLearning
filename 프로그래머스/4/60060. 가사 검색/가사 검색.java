@@ -48,10 +48,9 @@ class Trie {
 
     void insert(String word) {
         Node node = root;
-        node.wordCount++;
         for (char c : word.toCharArray()) {
-            node = node.child.computeIfAbsent(c, k -> new Node());
             node.wordCount++;
+            node = node.child.computeIfAbsent(c, k -> new Node());
         }
     }
 
