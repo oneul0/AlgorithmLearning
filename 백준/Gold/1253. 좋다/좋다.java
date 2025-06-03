@@ -1,46 +1,48 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.HashSet;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
-    public static void main(String[] args) throws Exception{
-        int ans = 0;
-        int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        for(int i = 0; i<N; i++){
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr);
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int[] arr;
+	static HashSet<Integer> set = new HashSet<>();
+	public static void main(String[] args) throws IOException {
+		int n = Integer.parseInt(br.readLine());
+		arr = new int[n];
+		String[] st = br.readLine().split(" ");
+		for (int i = 0; i < n; i++) {
+			arr[i] = Integer.parseInt(st[i]);
+			set.add(arr[i]);
+		}
 
-        for(int i = 0; i<N; i++){
-            int l = 0, r = N-1;
-            while(l<r){
-                if(l == i || r == i){
-                    if(l == i) l++;
-                    else r--;
-                }
-                else{
-                    long sum = arr[l]+arr[r];
-                    if(arr[i] == sum){
-                        ans++;
-                        break;
-                    }
-                    else if(sum < arr[i]){
-                        l++;
-                    }
-                    else{
-                        r--;
-                    }
-                }
-            }
-        }
+		Arrays.sort(arr);
+		int ans = 0;
+		for(int i = 0; i<n; i++){
+			ans += tp(i);
+		}
 
-        bw.write(ans+"");
-        bw.flush();
-        br.close();
-        bw.close();
-    }
+		System.out.println(ans);
+	}
+
+	public static int tp(int idx){
+		int low = 0;
+		int high = arr.length - 1;
+
+		while(low < high){
+			int sum = arr[low] + arr[high];
+			if(sum < arr[idx] || low == idx){
+				low++;
+			}
+			else if(sum > arr[idx] || high == idx){
+				high--;
+			}
+			else{
+				return 1;
+			}
+		}
+		return 0;
+	}
+
 }
