@@ -1,25 +1,32 @@
 #include <iostream>
-#include <vector>
-#include <cmath>
+#include <string>
 
 using namespace std;
 
-int main(){
-    const int R = 31;
-    const int MOD = 1234567891;
-
-    string str;
-    int n;
+long calculate_hash(const string& str, int R, int MOD) {
     long ans = 0;
-    cin >> n >> str;
-    for(int i = 0; i<str.length(); i++){
-        long char_val = str[i]-96;
-        long calc_r = pow(R, i);
-        calc_r %= MOD;
-        ans += ((char_val)*(calc_r)%MOD);
-        ans %= MOD;
+    long R_power = 1;
+    int n = str.length();
+
+    for(int i = 0; i < n; ++i){
+        long char_val = static_cast<long>(str[i] - 96);
+        long term = (char_val * R_power) % MOD;
+
+        ans = (ans + term) % MOD;
+
+        R_power = (R_power * R) % MOD;
     }
-    cout << ans;
+    return ans;
+}
+
+int main() {
+    const int base = 31, modulus = 1234567891;
+
+    int n;
+    string str;
+    cin >> n >> str;
+
+    long hash_value = calculate_hash(str, base, modulus);
+    cout << hash_value;
     return 0;
 }
-//as는 97
