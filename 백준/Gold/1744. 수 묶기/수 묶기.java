@@ -9,11 +9,11 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		int n = Integer.parseInt(br.readLine());
 		int[] arr = new int[n];
-		int zeroCount = 0;
+		boolean zeroExists = false;
 
 		for (int i = 0; i < n; i++) {
 			int num = Integer.parseInt(br.readLine());
-			if (num == 0) zeroCount++;
+			if (num == 0) zeroExists = true;
 			arr[i] = num;
 		}
 
@@ -35,7 +35,7 @@ public class Main {
 		// 0으로 음수 무효화
 		if (left < n && arr[left] < 0) {
 			if (left + 1 >= n || arr[left + 1] > 0) {
-				if (zeroCount > 0) {
+				if (zeroExists) {
 					left++;
 				} else {
 					ans += arr[left];
