@@ -23,10 +23,10 @@ public class Main {
             return;
         }
 
-        for(int i = idx; i<segments.length; i++){
-            if(segments[i][0]>cx){
-                findMaxLine(segments[i][1], count+1, i+1);
-            }
+        if(cx <= segments[idx][0]){
+            findMaxLine(segments[idx][1], count+1, idx+1);
         }
+
+        findMaxLine(cx, count, idx+1);
     }
 }
