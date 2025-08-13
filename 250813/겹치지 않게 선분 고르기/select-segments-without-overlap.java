@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void findMaxLine(int depth, int count){
-        if(depth > limit){
+        if(depth >= limit){
             answer = Math.max(answer, count);
             return;
         }
