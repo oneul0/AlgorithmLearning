@@ -13,7 +13,7 @@ public class Main {
         }
         Arrays.sort(segments, (a, b) -> Integer.compare(a[0], b[0]));
         //시작 x값, 선분 수
-        findMaxLine(1, 0, 0);
+        findMaxLine(0, 0, 0);
         System.out.print(answer);
     }
 
