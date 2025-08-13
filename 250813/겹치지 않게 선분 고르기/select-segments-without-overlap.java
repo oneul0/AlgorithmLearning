@@ -12,6 +12,7 @@ public class Main {
             segments[i][1] = sc.nextInt();
             limit = Math.max(limit, segments[i][1]);
         }
+        Arrays.sort(segments, (a, b) -> Integer.compare(a[0], b[0]));
         //시작 x값, 선분 수
         findMaxLine(1, 0);
         System.out.print(answer);
