@@ -23,7 +23,7 @@ public class Main {
             return;
         }
 
-        if(cx <= segments[idx][0]){
+        if(cx < segments[idx][0]){
             findMaxLine(segments[idx][1], count+1, idx+1);
         }
 
