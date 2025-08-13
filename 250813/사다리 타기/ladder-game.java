@@ -26,7 +26,7 @@ public class Main {
 
         ladder = new boolean[H + 1][n];
 
-        backtracking(0);
+        backtracking(0, 1, 1);
 
         System.out.println(answer);
     }
@@ -58,18 +58,18 @@ public class Main {
         return true;
     }
 
-    static void backtracking(int depth) {
+    static void backtracking(int depth, int sy, int sx) {
         if (depth > H) return;
         if (checkAllArrived()) {
             answer = Math.min(answer, depth);
             return;
         }
 
-        for (int y = 1; y <= H; y++) {
-            for (int x = 1; x < n; x++) {
+        for (int y = sy; y <= H; y++) {
+            for (int x = (y == sy ? sx : 1); x < n; x++) {
                 if (canPlace(y, x)) {
                     ladder[y][x] = true;
-                    backtracking(depth + 1);
+                    backtracking(depth + 1, y, x);
                     ladder[y][x] = false;
                 }
             }
