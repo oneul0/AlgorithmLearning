@@ -1,62 +1,71 @@
 import java.util.*;
 
-public class Solution {
-    private boolean[][] visited;
-    private int[] dr = {1, 0, -1, 0};
-    private int[] dc = {0, 1, 0, -1};
-    private int n;
-    private int m;
-
+class Solution {
+    int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
+    boolean[][] chk;
+    int n, m, idx = 1;
+    int[][] land;
+    ArrayList<Integer> oil = new ArrayList<>();
+    
     public int solution(int[][] land) {
+        this.land = land;
         n = land.length;
         m = land[0].length;
-        visited = new boolean[n][m];
-        Map<Integer, Integer> totalOils = new HashMap<>();
+        chk = new boolean[n][m];
+        oil.add(0);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (land[i][j] == 1 && !chk[i][j]) {
+                    bfs(i, j);
+                }
+            }
+        }
 
         int answer = 0;
-
-        for (int r = 0; r < n; r++) {
-            for (int c = 0; c < m; c++) {
-                if (land[r][c] == 1 && !visited[r][c]) {
-                    Set<Integer> cols = new HashSet<>();
-                    int oils = bfs(land, r, c, cols);
-
-                    for (int col : cols) {
-                        totalOils.put(col, totalOils.getOrDefault(col, 0) + oils);
-                    }
+        for (int j = 0; j < m; j++) {
+            int curSum = 0;
+            Set<Integer> visitedOil = new HashSet<>();
+            for (int i = 0; i < n; i++) {
+                if (land[i][j] > 0) {
+                    visitedOil.add(land[i][j]);
                 }
             }
+            
+            for (int oilIdx : visitedOil) {
+                curSum += oil.get(oilIdx);
+            }
+            answer = Math.max(answer, curSum);
         }
-
-        for (int value : totalOils.values()) {
-            answer = Math.max(answer, value);
-        }
-
+        
         return answer;
     }
-
-    private int bfs(int[][] land, int startR, int startC, Set<Integer> cols) {
-        Queue<int[]> queue = new LinkedList<>();
-        queue.offer(new int[]{startR, startC});
-        visited[startR][startC] = true;
-
-        int oils = 0;
-        while (!queue.isEmpty()) {
-            int[] current = queue.poll();
-            int r = current[0];
-            int c = current[1];
-            oils++;
-            cols.add(c);
-
+    
+    public void bfs(int sx, int sy) {
+        Queue<int[]> q = new ArrayDeque<>();
+        q.offer(new int[]{sx, sy});
+        chk[sx][sy] = true;
+        land[sx][sy] = idx;
+        
+        int result = 0;
+        result++;
+        
+        while (!q.isEmpty()) {
+            int[] cur = q.poll();
+            
             for (int i = 0; i < 4; i++) {
-                int nr = r + dr[i];
-                int nc = c + dc[i];
-                if (nr >= 0 && nr < n && nc >= 0 && nc < m && land[nr][nc] == 1 && !visited[nr][nc]) {
-                    queue.offer(new int[]{nr, nc});
-                    visited[nr][nc] = true;
-                }
+                int nx = cur[0] + dx[i];
+                int ny = cur[1] + dy[i];
+                
+                if (nx < 0 || ny < 0 || nx >= n || ny >= m || land[nx][ny] == 0 || chk[nx][ny]) continue;
+                
+                q.offer(new int[]{nx, ny});
+                chk[nx][ny] = true;
+                land[nx][ny] = idx;
+                result++;
             }
         }
-        return oils;
+        oil.add(result);
+        idx++;
     }
 }
