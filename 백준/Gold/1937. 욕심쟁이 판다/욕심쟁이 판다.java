@@ -1,46 +1,50 @@
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static int[][] dp, bam, d = {{0,-1}, {0,1}, {-1,0}, {1,0}};
-    static int N, max = 0;;
-    public static void main(String[] args) throws IOException {
-        N = Integer.parseInt(br.readLine());
-        dp = new int[N][N]; bam = new int[N][N];
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int N, answer = 0;
+	static int[][] arr;
+	static int[][] dp;
+	static int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
+	public static void main(String[] args) throws IOException {
+		N = Integer.parseInt(br.readLine());
+		arr = new int[N][N];
+		dp = new int[N][N];
+		StringTokenizer st;
+		for(int i = 0; i<N; i++){
+			st = new StringTokenizer(br.readLine());
+			for(int j = 0; j<N; j++){
+				arr[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
 
-        for(int i = 0; i<N; i++){
-            String[] s = br.readLine().split(" ");
-            for(int j = 0; j<N; j++){
-                bam[i][j] = Integer.parseInt(s[j]);
-            }
-        }
+		for(int i = 0; i<N; i++){
+			for(int j = 0; j<N; j++){
+				answer = Math.max(answer, dfs(i, j));
+			}
+		}
+		System.out.println(answer);
+		br.close();
+	}
 
+	public static int dfs(int cx, int cy){
+		if(dp[cx][cy] != 0){
+			return dp[cx][cy];
+		}
+        
+        int maxLen = 1;
 
-        for(int i = 0; i<N; i++){
-            for(int j = 0; j<N; j++){
-                max = Math.max(dfs(i,j), max);
-            }
-        }
+		for(int i = 0; i<4; i++){
+			int nx = cx + dx[i];
+			int ny = cy + dy[i];
+			if(nx<0 || ny<0 || nx>=N || ny>=N) continue;
+			if(arr[cx][cy] >= arr[nx][ny]) continue;
 
-        bw.write(max+"");
-        bw.flush();
-        br.close();
-        bw.close();
-    }
-
-    public static int dfs(int x, int y){
-        if(dp[x][y] != 0) return dp[x][y];
-
-        int maxDepth = 1;
-        for(int i = 0; i<4; i++){
-            int nx = x+d[i][0];
-            int ny = y+d[i][1];
-            if(nx>=0 && nx<N && ny>=0 && ny<N && bam[nx][ny] > bam[x][y]){
-                maxDepth = Math.max(maxDepth, dfs(nx, ny)+1);
-            }
-        }
-        dp[x][y] = maxDepth;
-        return maxDepth;
-    }
+            maxLen = Math.max(maxLen, dfs(nx, ny)+1);
+		}
+        dp[cx][cy] = maxLen;
+        
+		return dp[cx][cy];
+	}
 }
