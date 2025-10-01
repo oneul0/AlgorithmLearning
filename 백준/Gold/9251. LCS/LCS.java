@@ -1,29 +1,30 @@
 import java.io.*;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) throws Exception{
-        String s1 = br.readLine();
-        String s2 = br.readLine();
+	public static void main(String[] args) throws IOException{
+		String str1 = br.readLine();
+		String str2 = br.readLine();
+		int N = str1.length();
+        int M = str2.length();
+		//N번째 문자가 같은지 비교 (1~N)
+		int[][] dp = new int[N+1][M+1];
 
-        int[][] lcs = new int[1001][1001];
+		int answer = 0;
+		for(int i = 1; i<=N; i++){
+			for(int j = 1; j<=M; j++){
+				if(str1.charAt(i-1) == str2.charAt(j-1)){
+					dp[i][j] = dp[i-1][j-1]+1;
+				}
+				else{
+					dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+				}
+				answer = Math.max(dp[i][j], answer);
+			}
+		}
 
-        for(int i = 1; i <= s1.length(); i++){
-            for(int j = 1; j <= s2.length(); j++){
-                if(s1.charAt(i-1) == s2.charAt(j-1)){
-                    lcs[i][j] = lcs[i-1][j-1] + 1;
-                }
-                else{
-                    lcs[i][j] = Math.max(lcs[i-1][j], lcs[i][j-1]);
-                }
-            }
-        }
-
-        bw.write(lcs[s1.length()][s2.length()]+"");
-        bw.flush();
-        bw.close();
-        br.close();
-    }
+		System.out.println(answer);
+		br.readLine();
+	}
 }
