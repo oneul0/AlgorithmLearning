@@ -1,52 +1,82 @@
 import java.util.*;
 class Solution {
-    static int n, n3;
+    Set<Integer> hand = new HashSet<>();
+    Set<Integer> passedCards = new HashSet<>();
+    int N, N3, coins;
+
     public int solution(int coin, int[] cards) {
-        n = cards.length;
-        n3 = n/3;
-        //카드의 숫자는 유일하므로 boolean으로 관리
-        boolean hand[] = new boolean[n+1]; //손패에 있는 카드는 true
-        boolean paid[] = new boolean[n+1]; //처음 뽑은 카드
-        int coinLeft = coin; //코인
-        
-        //첫 패 얻기
-        for(int i = 0; i<n3; i++){
-            hand[cards[i]] = true;
-            paid[cards[i]] = true;
+        N = cards.length;
+        N3 = N/3;
+        this.coins = coin;
+
+        for(int i = 0; i<N3; i++){
+            hand.add(cards[i]);
         }
-        
-        int answer = 1;
-        //게임 시작
-        for(int i = n3; i<n; i+=2){
-            if(coinLeft > 0){
-                hand[cards[i]] = true;
-                hand[cards[i+1]] = true;
+
+        int rounds = 1;
+        for(int idx = N3; idx<N; idx+=2){
+            passedCards.add(cards[idx]);
+            passedCards.add(cards[idx+1]);
+
+            if(makeN1() || getCardsAndMakeN1()){
+                rounds++;
             }
-            
-            boolean pass = false; //낼 수 있는 카드 쌍이 있는지
-            int minCost = 3; // 가능한 가장 큰 비용은 2이므로 3으로 초기화
-            int cardThrown = -1; //버릴 카드 번호
-            //비용 산정 및 통과할 수 있는지 체크(1~현재 라운드까지)
-            for(int j = 1; j<=n; j++){
-                if(!hand[j]) continue; //손패에 없으면 continue
-                
-                if(hand[n+1-j]){ //낼 수 있는 비용의 카드인지
-                    int cost = (paid[j] ? 0 : 1) + (paid[n+1-j] ? 0:1);
-                    if(coinLeft < cost || minCost <= cost) continue;
-                    
-                    pass = true;
-                    cardThrown = j;
-                    minCost = cost;
+            else {
+                break;
+            }
+        }
+        return rounds;
+    }
+
+    // 손에서 만들 수 있는지
+    public boolean makeN1(){
+        Iterator<Integer> it = hand.iterator();
+        while(it.hasNext()){
+            int c = it.next();
+            int target = N+1-c;
+            if(hand.contains(target) && target != c){
+                it.remove(); // 현재 원소 제거
+                hand.remove(target); // 짝 제거
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // 지나친 카드와 내 손에 있는 카드 혹은 지나친 카드들 중에서 가능한지
+    public boolean getCardsAndMakeN1(){
+        if(passedCards.isEmpty()) return false;
+
+        // 코인 1개 소모, (hand + passed)
+        if(coins >= 1){
+            Iterator<Integer> it = passedCards.iterator();
+            while(it.hasNext()){
+                int cur = it.next();
+                int target = N+1-cur;
+                if(hand.contains(target)){
+                    hand.remove(target);
+                    it.remove(); // cur 제거
+                    coins--;
+                    return true;
                 }
             }
-            
-            if(!pass) break; //버릴 카드가 없으면 끝
-            hand[cardThrown] = false;
-            hand[n+1-cardThrown] = false;
-            coinLeft -= minCost;
-            
-            answer++;
         }
-        return answer;
+
+        // 코인 2개 소모, (passed + passed)
+        if(coins >= 2){
+            Iterator<Integer> it1 = passedCards.iterator();
+            while(it1.hasNext()){
+                int cur = it1.next();
+                int target = N+1-cur;
+                if(passedCards.contains(target) && target != cur){
+                    it1.remove(); // cur 제거
+                    passedCards.remove(target); // 짝 제거
+                    coins -= 2;
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
