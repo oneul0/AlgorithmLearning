@@ -1,49 +1,50 @@
 import java.util.*;
 class Solution {
-    Map<String, Map<String, Integer>> giftHistory = new HashMap<>();
-    Map<String, Integer> giftScore = new HashMap<>();
-
     public int solution(String[] friends, String[] gifts) {
-
-        for (String friend : friends) {
-            giftHistory.put(friend, new HashMap<>());
-            giftScore.put(friend, 0);
+        int N = friends.length;
+        Map<String, Integer> idxMap = new HashMap<>();
+        for(int i = 0; i<N; i++){
+            idxMap.put(friends[i], i);
         }
-
-        for (String gift : gifts) {
-            String[] parts = gift.split(" ");
-            String from = parts[0];
-            String to = parts[1];
-
-            giftHistory.get(from).put(to, giftHistory.get(from).getOrDefault(to, 0) + 1);
-            giftScore.put(from, giftScore.get(from) + 1);
-            giftScore.put(to, giftScore.get(to) - 1);
+        // 선물 관계 정리
+        int[][] giftRelations = new int[N][N];
+        int[] gifted = new int[N]; //준 선물
+        int[] getGifts = new int[N]; // 받은 선물
+        int[] giftScores = new int[N]; // 선물 지수
+        for(String gift : gifts){
+            String[] rel = gift.split(" ");
+            giftRelations[idxMap.get(rel[0])][idxMap.get(rel[1])]++;
+            gifted[idxMap.get(rel[0])]++;
+            getGifts[idxMap.get(rel[1])]++;
         }
-
-        int maxReceive = 0;
-        for (int i = 0; i < friends.length; i++) {
-            int count = 0;
-            for (int j = 0; j < friends.length; j++) {
-                if (i == j) continue;
-
-                String a = friends[i];
-                String b = friends[j];
-
-                int aToB = giftHistory.get(a).getOrDefault(b, 0);
-                int bToA = giftHistory.get(b).getOrDefault(a, 0);
-
-                //기록 있으면 점수 더 큰 쪽에 선물 주기
-                if (aToB > bToA) {
-                    count++;
-                } else if (aToB == bToA && giftScore.get(a) > giftScore.get(b)) {
-                    count++;
+        
+        // 선물 지수 도출
+        for(int i = 0; i<N; i++){
+            giftScores[i] = gifted[i] - getGifts[i];
+        }
+        
+        int[] giftCount = new int[N];
+        // 선물 받는 수 정리하면서 가장 많이 받은 선물 저장
+        for(int i = 0; i<N; i++){
+            for(int j = 0; j<N; j++){
+                if(i == j) continue;
+                // 두 사람 간에 선물 교환이 있었으면 더 많이 준 사람한테 선물을 하나 준다.
+                if((giftRelations[i][j] != 0 || giftRelations[j][i] != 0)
+                   && giftRelations[i][j] != giftRelations[j][i]){
+                    giftCount[i] += (giftRelations[i][j] > giftRelations[j][i] ? 1 : 0);
+                }
+                // 두 사람이 선물 교환이 없었거나 주고 받은 수가 같다면 선물 지수로 판단(더 작은 사람이 더 큰 사람에게 하나 준다.)
+                else {
+                    giftCount[i] += (giftScores[i] > giftScores[j] ? 1 : 0);
                 }
             }
-            maxReceive = Math.max(maxReceive, count);
         }
-
-        return maxReceive;
+        
+        return Arrays.stream(giftCount)
+						.max().getAsInt();
     }
-
 }
 
+
+
+// 선물을 가장 많이 받은 사람이 받는 선물의 수
