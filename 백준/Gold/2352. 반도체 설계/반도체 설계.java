@@ -1,33 +1,44 @@
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) throws IOException {
-        int N = Integer.parseInt(br.readLine());
-        String[] s = br.readLine().split(" ");
+	public static void main(String[] args) throws IOException {
+		int N = Integer.parseInt(br.readLine());
+		int[] A = new int[N];
 
-        int[] lines = new int[40001], dp = new int[40001];
-        for(int i = 1; i <=N; i++) {
-            lines[i] = Integer.parseInt(s[i-1]);
-        }
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < N; i++) {
+			A[i] = Integer.parseInt(st.nextToken());
+		}
 
-        int max = 0;
-        for(int i = 1; i <= N; i++) {
-            dp[i] = 1;
-            for(int j = 1; j < i; j++) {
-                if(lines[i] > lines[j]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-            }
-            max = Math.max(max, dp[i]);
-        }
+		int[] tails = new int[N];
+		int size = 0;
+		for(int i = 0; i<N; i++){
+			int pos = lowerBound(tails, 0, size, A[i]);
+			if(pos == size){
+				tails[size++] = A[i];
+			}
+			else{
+				tails[pos] = A[i];
+			}
+		}
+		System.out.println(size);
+	}
 
-        bw.write(max + "");
-        bw.flush();
-        br.close();
-        bw.close();
-
-    }
+	//이전에 연결된게 내가 연결할 번호보다 작으면 됨
+	public static int lowerBound(int[] arr, int start, int end, int target) {
+		int l = start, r = end-1;
+		while (l <= r) {
+			int mid = (l+r) >>> 1;
+			if (arr[mid] < target) {
+				l = mid + 1;
+			}
+			else {
+				r = mid-1;
+			}
+		}
+		return l;
+	}
 }
