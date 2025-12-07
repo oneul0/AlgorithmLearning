@@ -107,7 +107,7 @@ public class Main {
 	public static int[] prim(int totalCnt){
 		boolean[] visited = new boolean[totalCnt+1];
 		PriorityQueue<Coord> pq = new PriorityQueue<>();
-		pq.offer(new Coord(1, 1, 0)); // dist만 사용
+		pq.offer(new Coord(1, 1, 0));
 
 		int cost = 0;
 		int count = 0;
