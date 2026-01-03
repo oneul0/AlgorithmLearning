@@ -4,26 +4,22 @@ import java.util.*;
 public class Main {
 
 	static class Coord {
-		int x, y, dist;
-		Coord(int x, int y, int dist) {
+		int x, y;
+		Coord(int x, int y) {
 			this.x = x;
 			this.y = y;
-			this.dist = dist;
-		}
-		Coord(int x, int y) {
-			this(x, y, 0);
 		}
 	}
 
 	static class Passenger {
 		Coord start;
 		Coord end;
-		int roundDist;
+		int distSE; // start -> end 거리
 
-		Passenger(Coord start, Coord end, int roundDist) {
+		Passenger(Coord start, Coord end, int distSE) {
 			this.start = start;
 			this.end = end;
-			this.roundDist = roundDist;
+			this.distSE = distSE;
 		}
 	}
 
@@ -32,58 +28,57 @@ public class Main {
 	static int[] dx = {-1, 1, 0, 0};
 	static int[] dy = {0, 0, -1, 1};
 
-	// BFS 최단 거리
-	static int getShortestDist(Coord start, Coord end) {
-		Deque<Coord> q = new ArrayDeque<>();
-		boolean[][] visited = new boolean[N + 1][N + 1];
+	// 택시 위치에서 모든 칸까지 거리 bfs
+	static int[][] bfs(Coord start) {
+		int[][] dist = new int[N + 1][N + 1];
+		for (int i = 1; i <= N; i++) Arrays.fill(dist[i], -1);
 
+		ArrayDeque<Coord> q = new ArrayDeque<>();
 		q.add(start);
-		visited[start.x][start.y] = true;
+		dist[start.x][start.y] = 0;
 
 		while (!q.isEmpty()) {
 			Coord cur = q.poll();
 
-			if (cur.x == end.x && cur.y == end.y) {
-				return cur.dist;
-			}
-
-			for (int i = 0; i < 4; i++) {
-				int nx = cur.x + dx[i];
-				int ny = cur.y + dy[i];
+			for (int d = 0; d < 4; d++) {
+				int nx = cur.x + dx[d];
+				int ny = cur.y + dy[d];
 
 				if (nx < 1 || ny < 1 || nx > N || ny > N) continue;
-				if (visited[nx][ny]) continue;
-				if (map[nx][ny] == 1) continue;
+				if (map[nx][ny] == 1 || dist[nx][ny] != -1) continue;
 
-				visited[nx][ny] = true;
-				q.add(new Coord(nx, ny, cur.dist + 1));
+				dist[nx][ny] = dist[cur.x][cur.y] + 1;
+				q.add(new Coord(nx, ny));
 			}
 		}
-		return -1;
+		return dist;
 	}
 
 	static int solve(List<Passenger> ps, Coord taxi) {
 
 		while (!ps.isEmpty()) {
 
+			// 택시 기준 bfs
+			int[][] dist = bfs(taxi);
+
 			int idx = -1;
 			int minDist = Integer.MAX_VALUE;
 
-			// 태울 승객 선택
+			// 가장 가까운 승객 선택
 			for (int i = 0; i < ps.size(); i++) {
 				Passenger p = ps.get(i);
-				int dist = getShortestDist(taxi, p.start);
-				if (dist == -1 || dist > F) continue;
+				int d = dist[p.start.x][p.start.y];
 
-				if (dist < minDist ||
-					(dist == minDist &&
+				if (d == -1 || d > F) continue;
+
+				if (idx == -1 ||
+					d < minDist ||
+					(d == minDist &&
 						(p.start.x < ps.get(idx).start.x ||
-							(p.start.x == ps.get(idx).start.x && p.start.y < ps.get(idx).start.y)
-						)
-					)
-				) {
+							(p.start.x == ps.get(idx).start.x &&
+								p.start.y < ps.get(idx).start.y)))) {
 					idx = i;
-					minDist = dist;
+					minDist = d;
 				}
 			}
 
@@ -91,23 +86,47 @@ public class Main {
 
 			Passenger chosen = ps.get(idx);
 
-			int carToPassenger = minDist;
-			int startToEnd = chosen.roundDist;
-
-			if (startToEnd == -1) return -1;
-			if (carToPassenger + startToEnd > F) return -1;
+			if (chosen.distSE == -1) return -1;
+			if (minDist + chosen.distSE > F) return -1;
 
 			// 연료 계산
-			F = F - carToPassenger - startToEnd + (startToEnd * 2);
+			F = F - minDist + chosen.distSE;
 
-			// 택시 위치 이동
-			taxi = chosen.end;
+			// 택시 이동
+			taxi.x = chosen.end.x;
+			taxi.y = chosen.end.y;
 
 			// 승객 제거
 			ps.remove(idx);
 		}
 
 		return F;
+	}
+
+	// start -> end 최단거리 계산용 bfs
+	static int bfsOne(Coord start, Coord end) {
+		boolean[][] visited = new boolean[N + 1][N + 1];
+		ArrayDeque<int[]> q = new ArrayDeque<>();
+
+		q.add(new int[]{start.x, start.y, 0});
+		visited[start.x][start.y] = true;
+
+		while (!q.isEmpty()) {
+			int[] cur = q.poll();
+			if (cur[0] == end.x && cur[1] == end.y) return cur[2];
+
+			for (int d = 0; d < 4; d++) {
+				int nx = cur[0] + dx[d];
+				int ny = cur[1] + dy[d];
+
+				if (nx < 1 || ny < 1 || nx > N || ny > N) continue;
+				if (map[nx][ny] == 1 || visited[nx][ny]) continue;
+
+				visited[nx][ny] = true;
+				q.add(new int[]{nx, ny, cur[2] + 1});
+			}
+		}
+		return -1;
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -145,7 +164,7 @@ public class Main {
 				Integer.parseInt(st.nextToken()),
 				Integer.parseInt(st.nextToken())
 			);
-			int dist = getShortestDist(s, e);
+			int dist = bfsOne(s, e);
 			ps.add(new Passenger(s, e, dist));
 		}
 
