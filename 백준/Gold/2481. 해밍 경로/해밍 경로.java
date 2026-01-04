@@ -81,10 +81,12 @@ public class Main {
 				System.out.print(-1);
 			}
 
+			StringBuilder sb = new StringBuilder();
 			for (int p : path) {
-				System.out.print(p + " ");
+				// System.out.print(p + " ");
+				sb.append(p).append(" ");
 			}
-			System.out.println();
+			System.out.println(sb);
 		}
 	}
 }
