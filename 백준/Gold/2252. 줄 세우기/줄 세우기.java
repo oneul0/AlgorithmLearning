@@ -32,10 +32,10 @@ public class Main {
 		}
 
 		while(!q.isEmpty()){
-			Integer cur = q.poll();
+			int cur = q.poll();
 			result.add(cur);
 
-			for(Integer child : gr.get(cur)){
+			for(int child : gr.get(cur)){
 				indegrees[child]--;
 				if(visited[child]) continue;
 				if(indegrees[child] <= 0){
@@ -46,7 +46,7 @@ public class Main {
 		}
 
 		StringBuilder sb = new StringBuilder();
-		for(Integer i : result){
+		for(int i : result){
 			sb.append(i).append(" ");
 		}
 		System.out.println(sb);
