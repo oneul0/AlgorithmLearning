@@ -42,12 +42,12 @@ public class Main {
 				if(cur.idx == next) continue;
 				Coords nextCoords = points.get(next);
 				double newDist = cur.dist;
-				double wireLen = Math.hypot((nextCoords.x - curCoords.x), (nextCoords.y - curCoords.y));
-
-				if(isConnected[cur.idx][next]) wireLen = 0;
-				if(wireLen > m) continue;
-
-				newDist += wireLen;
+				
+				if(!isConnected[cur.idx][next]){
+					double wireLen = Math.hypot((nextCoords.x - curCoords.x), (nextCoords.y - curCoords.y));
+					if(wireLen > m) continue;
+					newDist += wireLen;	
+				}
 				if(dists[next] > newDist){
 					pq.offer(new Node(next, newDist));
 					dists[next] = newDist;
