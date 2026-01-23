@@ -20,13 +20,13 @@ public class Main {
 			f[i] = Integer.parseInt(st.nextToken());
 		}
 
-		System.out.println(play(1, w, f));
+		System.out.println(play(1, w, -1, f));
 	}
 
-	public static int play(int time, int skhPos, int[] fire) {
+	public static int play(int time, int skhPos, int wood, int[] fire) {
 		int[] next = fire.clone();
 
-		reduceFire(next, skhPos, time);
+		reduceFire(next, wood);
 
 		if (getFireCount(next) < k) return 0;
 
@@ -38,7 +38,7 @@ public class Main {
 		for (int d = 0; d < 3; d++) {
 			int nx = skhPos + dx[d];
 			if (nx < 0 || nx >= n) continue;
-			result += play(time + 1, nx, next);
+			result += play(time + 1, nx, nx, next);
 		}
 
 
@@ -53,11 +53,11 @@ public class Main {
 		return count;
 	}
 
-	public static void reduceFire(int[] fire, int firewoodPos, int time) {
+	public static void reduceFire(int[] fire, int firewoodPos) {
 		int[] tmp = fire.clone();
 
 		for (int i = 0; i < n; i++) {
-			if (time>1 && i == firewoodPos) continue;
+			if (i == firewoodPos) continue;
 			if (fire[i] <= 0) continue;
 
 			int nearBy = 0;
