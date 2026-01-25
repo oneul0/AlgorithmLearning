@@ -38,27 +38,28 @@ public class Main {
 			}
 		}
 
-		System.out.println((hx+1)+" "+(hy+1));
+		StringBuilder sb = new StringBuilder();
+		sb.append(hx+1).append(" ").append(hy+1).append("\n");
 		//왼팔
 		//오른팔
 		//허리
 		int[] endPoint = new int[]{-1,-1, 0}; // x, y, len
 		for(int i = 0; i<3; i++){
 			endPoint = getLen(hx, hy, i);
-			System.out.print(endPoint[2] +" ");
+			sb.append(endPoint[2]).append(" ");
 		}
 
 		//허리에서 대각선으로 갔을 때 왼쪽에 있는게 왼다리, 오른쪽 오른다리
 		//1,-1
 		//왼다리
 		int leftLeg = getLen(endPoint[0]+1, endPoint[1]-1, 2)[2]+1;
-		System.out.print(leftLeg+" ");
+		sb.append(leftLeg).append(" ");
 		//1,1
 		//오른다리
 
 		int rightLeg = getLen(endPoint[0]+1, endPoint[1]+1, 2)[2]+1;
-		System.out.print(rightLeg+" ");
-
+		sb.append(rightLeg);
+		System.out.println(sb);
 	}
 
 	public static int[] getLen(int sx, int sy, int dir){
