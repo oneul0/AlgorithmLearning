@@ -29,7 +29,7 @@ public class Main {
 	}
 	static int[] dx = {-1,1,0,0}, dy={0,0,-1,1};
 	public static int bfs(int sx , int sy){
-		PriorityQueue<Node> pq = new PriorityQueue<>();
+		Deque<Node> pq = new ArrayDeque<>();
 		int[][] visited = new int[n][n];
 		for(int i = 0; i<n; i++){
 			Arrays.fill(visited[i], 1_000_000_000);
@@ -52,8 +52,8 @@ public class Main {
 				int newChanged = cur.changed;
 				if(maze[nx][ny] == '0') newChanged++;
 				if(visited[nx][ny] <= newChanged) continue;
-
-				pq.offer(new Node(nx, ny, newChanged));
+				if(maze[nx][ny] == '1') pq.offerFirst(new Node(nx, ny, newChanged));
+				else pq.offerLast(new Node(nx, ny, newChanged));
 				visited[nx][ny] = newChanged;
 			}
 		}
