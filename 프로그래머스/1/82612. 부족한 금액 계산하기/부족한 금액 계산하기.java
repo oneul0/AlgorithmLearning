@@ -1,9 +1,6 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long fee = 0;
-        for(int i = 1; i<=count; i++){
-            fee += (price * i);
-        }
-        return Math.abs(Math.min(0, money-fee));
+        long totalCost = (long) price * count * (count + 1) / 2;
+        return Math.max(0, totalCost - money);
     }
 }
