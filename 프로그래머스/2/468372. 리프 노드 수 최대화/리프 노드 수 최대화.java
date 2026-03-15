@@ -25,21 +25,14 @@ class Solution {
         // 분배 노드를 더 이상 쓸 수 없거나 탐색할 노드가 없으면 종료
         if (used >= dLim || N == 0) return;
 
-        // 현재 깊이의 분배 노드 자식 수를 2로 결정하면
-        if (S * 2 <= sLim) {
-            long m = Math.min(N, dLim - used); // 가능한 한 많이 분배 노드로 지정
-            if (m > 0) {
-                // 새 리프 수 = 기존 - m(분배노드될 것) + m*2(새로 생긴거) = 기존 + m
-                dfs(S * 2, m * 2, used + m, leaves + m);
-            }
-        }
-
-        // 현재 깊이의 분배 노드 자식 수를 3으로 결정하면
-        if (S * 3 <= sLim) {
-            long m = Math.min(N, dLim - used);
-            if (m > 0) {
-                // 새 리프 수 = 기존 - m + m*3 = 기존 + 2*m
-                dfs(S * 3, m * 3, used + m, leaves + m * 2);
+        //현재 깊이의 분배 노드 자식 수 2~3개인 경우
+        for(int i = 2; i<=3; i++){
+            if (S * i <= sLim) {
+                long m = Math.min(N, dLim - used); // 가능한 한 많이 분배 노드로 지정
+                if (m > 0) {
+                    // 새 리프 수 = 기존 - m(분배노드될 것) + m*i(새로 생긴거) = 기존 + m
+                    dfs(S * i, m * i, used + m, leaves + m * (i-1));
+                }
             }
         }
     }
