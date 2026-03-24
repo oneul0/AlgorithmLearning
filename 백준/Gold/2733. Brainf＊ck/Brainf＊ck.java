@@ -28,8 +28,7 @@ public class Main {
 			}
 
 			System.out.println("PROGRAM #" + t + ":");
-			System.out.print(execute(code, pair));
-			System.out.println();
+			System.out.println(execute(code, pair));
 		}
 	}
 
@@ -60,19 +59,19 @@ public class Main {
 			char cmd = code.charAt(ip);
 
 			switch (cmd) {
-				case '>': 
-					ptr = (ptr + 1) % 32768; 
+				case '>':
+					ptr = (ptr + 1) % 32768;
 					break;
-				case '<': 
-					ptr = (ptr + 32767) % 32768; 
+				case '<':
+					ptr = (ptr + 32767) % 32768;
 					break;
-				case '+': 
-					memory[ptr] = (memory[ptr] + 1) % 256; 
+				case '+':
+					memory[ptr] = (memory[ptr] + 1) % 256;
 					break;
-				case '-': 
-					memory[ptr] = (memory[ptr] + 255) % 256; 
+				case '-':
+					memory[ptr] = (memory[ptr] + 255) % 256;
 					break;
-				case '.': 
+				case '.':
 					result.append((char) memory[ptr]);
 					break;
 				case '[':
