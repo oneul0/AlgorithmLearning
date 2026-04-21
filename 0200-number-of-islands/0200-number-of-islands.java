@@ -25,9 +25,10 @@ class Solution {
             for(int i = 0; i<4; i++){
                 int nx = cur[0] + dx[i];
                 int ny = cur[1] + dy[i];
-                if(nx<0 ||ny<0 || nx>=N || ny>=M || visited[nx][ny] || grid[nx][ny] == '0') continue;
-                q.offer(new int[]{nx, ny});
-                visited[nx][ny] = true;
+                if(nx>=0 && ny>=0 && nx<N && ny<M && !visited[nx][ny] && grid[nx][ny] == '1'){
+                    q.offer(new int[]{nx, ny});
+                    visited[nx][ny] = true;
+                }
             }
         }
     }
