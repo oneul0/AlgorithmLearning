@@ -34,4 +34,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
+## Math
+|  |
+| ------- |
+| [0009-palindrome-number](https://github.com/oneul0/AlgorithmLearning/tree/master/0009-palindrome-number) |
 <!---LeetCode Topics End-->
