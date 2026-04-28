@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
+| [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
 ## Dynamic Programming
 |  |
@@ -45,4 +46,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
+## Hash Table
+|  |
+| ------- |
+| [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
+## Greedy
+|  |
+| ------- |
+| [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
+## Bit Manipulation
+|  |
+| ------- |
+| [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
 <!---LeetCode Topics End-->
