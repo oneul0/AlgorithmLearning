@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
 | [0560-subarray-sum-equals-k](https://github.com/oneul0/AlgorithmLearning/tree/master/0560-subarray-sum-equals-k) |
+| [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 | [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
 ## Dynamic Programming
@@ -55,6 +56,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
 | [0560-subarray-sum-equals-k](https://github.com/oneul0/AlgorithmLearning/tree/master/0560-subarray-sum-equals-k) |
+| [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 ## Hash Table
 |  |
 | ------- |
@@ -107,8 +109,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/oneul0/AlgorithmLearning/tree/master/0004-median-of-two-sorted-arrays) |
+| [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 ## Sorting
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+## Sliding Window
+|  |
+| ------- |
+| [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 <!---LeetCode Topics End-->
