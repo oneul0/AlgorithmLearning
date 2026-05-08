@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0004-median-of-two-sorted-arrays](https://github.com/oneul0/AlgorithmLearning/tree/master/0004-median-of-two-sorted-arrays) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+| [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
@@ -18,6 +19,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+| [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/oneul0/AlgorithmLearning/tree/master/2571-minimum-operations-to-reduce-an-integer-to-0) |
@@ -43,6 +45,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+| [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
@@ -50,6 +53,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+| [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
 ## Math
 |  |
@@ -126,4 +130,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+## Matrix
+|  |
+| ------- |
+| [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 <!---LeetCode Topics End-->
