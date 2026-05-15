@@ -26,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
+| [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/oneul0/AlgorithmLearning/tree/master/2571-minimum-operations-to-reduce-an-integer-to-0) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Depth-First Search
@@ -89,6 +90,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0011-container-with-most-water) |
 | [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
+| [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/oneul0/AlgorithmLearning/tree/master/2571-minimum-operations-to-reduce-an-integer-to-0) |
 ## Bit Manipulation
 |  |
@@ -124,6 +126,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
+| [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 ## Tree
 |  |
 | ------- |
@@ -153,6 +156,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0011-container-with-most-water) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+| [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 ## Matrix
 |  |
 | ------- |
