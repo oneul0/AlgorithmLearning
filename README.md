@@ -70,6 +70,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0009-palindrome-number](https://github.com/oneul0/AlgorithmLearning/tree/master/0009-palindrome-number) |
 | [0013-roman-to-integer](https://github.com/oneul0/AlgorithmLearning/tree/master/0013-roman-to-integer) |
+| [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -84,6 +85,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
 | [0560-subarray-sum-equals-k](https://github.com/oneul0/AlgorithmLearning/tree/master/0560-subarray-sum-equals-k) |
 | [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
+| [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
 ## Greedy
 |  |
@@ -169,6 +171,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
+| [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 ## Quickselect
 |  |
 | ------- |
@@ -181,4 +184,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0239-sliding-window-maximum](https://github.com/oneul0/AlgorithmLearning/tree/master/0239-sliding-window-maximum) |
+## Backtracking
+|  |
+| ------- |
+| [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
+## Enumeration
+|  |
+| ------- |
+| [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 <!---LeetCode Topics End-->
