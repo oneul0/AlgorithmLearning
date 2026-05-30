@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/oneul0/AlgorithmLearning/tree/master/0239-sliding-window-maximum) |
@@ -63,6 +64,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
 | [1441-build-an-array-with-stack-operations](https://github.com/oneul0/AlgorithmLearning/tree/master/1441-build-an-array-with-stack-operations) |
@@ -78,6 +80,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0009-palindrome-number](https://github.com/oneul0/AlgorithmLearning/tree/master/0009-palindrome-number) |
 | [0013-roman-to-integer](https://github.com/oneul0/AlgorithmLearning/tree/master/0013-roman-to-integer) |
+| [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 ## Prefix Sum
 |  |
