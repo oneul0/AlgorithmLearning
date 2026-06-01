@@ -30,6 +30,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/oneul0/AlgorithmLearning/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1929-concatenation-of-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1929-concatenation-of-array) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
+| [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
 | [2672-number-of-adjacent-elements-with-the-same-color](https://github.com/oneul0/AlgorithmLearning/tree/master/2672-number-of-adjacent-elements-with-the-same-color) |
 ## Dynamic Programming
 |  |
@@ -208,6 +209,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0239-sliding-window-maximum](https://github.com/oneul0/AlgorithmLearning/tree/master/0239-sliding-window-maximum) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/oneul0/AlgorithmLearning/tree/master/1700-number-of-students-unable-to-eat-lunch) |
+| [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
 ## Monotonic Queue
 |  |
 | ------- |
@@ -226,6 +228,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1441-build-an-array-with-stack-operations](https://github.com/oneul0/AlgorithmLearning/tree/master/1441-build-an-array-with-stack-operations) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/oneul0/AlgorithmLearning/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1929-concatenation-of-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1929-concatenation-of-array) |
+| [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
 ## Counting Sort
 |  |
 | ------- |
