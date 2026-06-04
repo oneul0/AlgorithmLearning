@@ -161,6 +161,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0482-license-key-formatting](https://github.com/oneul0/AlgorithmLearning/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/oneul0/AlgorithmLearning/tree/master/0520-detect-capital) |
+| [0831-masking-personal-information](https://github.com/oneul0/AlgorithmLearning/tree/master/0831-masking-personal-information) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
 | [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
