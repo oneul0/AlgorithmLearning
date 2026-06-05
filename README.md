@@ -162,6 +162,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0482-license-key-formatting](https://github.com/oneul0/AlgorithmLearning/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/oneul0/AlgorithmLearning/tree/master/0520-detect-capital) |
+| [0796-rotate-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0796-rotate-string) |
 | [0831-masking-personal-information](https://github.com/oneul0/AlgorithmLearning/tree/master/0831-masking-personal-information) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
@@ -253,4 +254,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
+| [0796-rotate-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0796-rotate-string) |
 <!---LeetCode Topics End-->
