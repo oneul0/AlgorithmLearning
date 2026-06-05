@@ -159,6 +159,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0013-roman-to-integer](https://github.com/oneul0/AlgorithmLearning/tree/master/0013-roman-to-integer) |
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+| [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0482-license-key-formatting](https://github.com/oneul0/AlgorithmLearning/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/oneul0/AlgorithmLearning/tree/master/0520-detect-capital) |
 | [0831-masking-personal-information](https://github.com/oneul0/AlgorithmLearning/tree/master/0831-masking-personal-information) |
@@ -248,4 +249,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0232-implement-queue-using-stacks](https://github.com/oneul0/AlgorithmLearning/tree/master/0232-implement-queue-using-stacks) |
+## String Matching
+|  |
+| ------- |
+| [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 <!---LeetCode Topics End-->
