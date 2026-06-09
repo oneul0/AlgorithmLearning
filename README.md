@@ -135,6 +135,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0023-merge-k-sorted-lists](https://github.com/oneul0/AlgorithmLearning/tree/master/0023-merge-k-sorted-lists) |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0083-remove-duplicates-from-sorted-list) |
+| [0206-reverse-linked-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0206-reverse-linked-list) |
 | [0328-odd-even-linked-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0328-odd-even-linked-list) |
 ## Divide and Conquer
 |  |
@@ -259,4 +260,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0686-repeated-string-match](https://github.com/oneul0/AlgorithmLearning/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0796-rotate-string) |
+## Recursion
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0206-reverse-linked-list) |
 <!---LeetCode Topics End-->
