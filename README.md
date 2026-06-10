@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/oneul0/AlgorithmLearning/tree/master/0004-median-of-two-sorted-arrays) |
 | [0011-container-with-most-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0011-container-with-most-water) |
+| [0041-first-missing-positive](https://github.com/oneul0/AlgorithmLearning/tree/master/0041-first-missing-positive) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0084-largest-rectangle-in-histogram](https://github.com/oneul0/AlgorithmLearning/tree/master/0084-largest-rectangle-in-histogram) |
@@ -107,6 +108,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0013-roman-to-integer](https://github.com/oneul0/AlgorithmLearning/tree/master/0013-roman-to-integer) |
+| [0041-first-missing-positive](https://github.com/oneul0/AlgorithmLearning/tree/master/0041-first-missing-positive) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0138-copy-list-with-random-pointer](https://github.com/oneul0/AlgorithmLearning/tree/master/0138-copy-list-with-random-pointer) |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
