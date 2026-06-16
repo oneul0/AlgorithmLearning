@@ -38,6 +38,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1664-ways-to-make-a-fair-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1664-ways-to-make-a-fair-array) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/oneul0/AlgorithmLearning/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1732-find-the-highest-altitude](https://github.com/oneul0/AlgorithmLearning/tree/master/1732-find-the-highest-altitude) |
+| [1887-reduction-operations-to-make-the-array-elements-equal](https://github.com/oneul0/AlgorithmLearning/tree/master/1887-reduction-operations-to-make-the-array-elements-equal) |
 | [1929-concatenation-of-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1929-concatenation-of-array) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
 | [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
@@ -209,6 +210,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/oneul0/AlgorithmLearning/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/oneul0/AlgorithmLearning/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
+| [1887-reduction-operations-to-make-the-array-elements-equal](https://github.com/oneul0/AlgorithmLearning/tree/master/1887-reduction-operations-to-make-the-array-elements-equal) |
 ## Sliding Window
 |  |
 | ------- |
