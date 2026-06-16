@@ -11,6 +11,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0041-first-missing-positive](https://github.com/oneul0/AlgorithmLearning/tree/master/0041-first-missing-positive) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+| [0056-merge-intervals](https://github.com/oneul0/AlgorithmLearning/tree/master/0056-merge-intervals) |
 | [0084-largest-rectangle-in-histogram](https://github.com/oneul0/AlgorithmLearning/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
@@ -206,6 +207,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+| [0056-merge-intervals](https://github.com/oneul0/AlgorithmLearning/tree/master/0056-merge-intervals) |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/oneul0/AlgorithmLearning/tree/master/1200-minimum-absolute-difference) |
