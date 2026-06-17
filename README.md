@@ -27,6 +27,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0636-exclusive-time-of-functions](https://github.com/oneul0/AlgorithmLearning/tree/master/0636-exclusive-time-of-functions) |
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
 | [0739-daily-temperatures](https://github.com/oneul0/AlgorithmLearning/tree/master/0739-daily-temperatures) |
+| [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 | [1046-last-stone-weight](https://github.com/oneul0/AlgorithmLearning/tree/master/1046-last-stone-weight) |
 | [1200-minimum-absolute-difference](https://github.com/oneul0/AlgorithmLearning/tree/master/1200-minimum-absolute-difference) |
@@ -202,6 +203,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/oneul0/AlgorithmLearning/tree/master/0004-median-of-two-sorted-arrays) |
+| [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 ## Sorting
 |  |
