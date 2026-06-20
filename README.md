@@ -32,6 +32,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0739-daily-temperatures](https://github.com/oneul0/AlgorithmLearning/tree/master/0739-daily-temperatures) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [0912-sort-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0912-sort-an-array) |
+| [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
 | [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 | [1046-last-stone-weight](https://github.com/oneul0/AlgorithmLearning/tree/master/1046-last-stone-weight) |
 | [1200-minimum-absolute-difference](https://github.com/oneul0/AlgorithmLearning/tree/master/1200-minimum-absolute-difference) |
@@ -111,6 +112,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0013-roman-to-integer](https://github.com/oneul0/AlgorithmLearning/tree/master/0013-roman-to-integer) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0633-sum-of-square-numbers](https://github.com/oneul0/AlgorithmLearning/tree/master/0633-sum-of-square-numbers) |
+| [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
 | [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 ## Prefix Sum
 |  |
@@ -169,6 +171,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0215-kth-largest-element-in-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
 | [0912-sort-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0912-sort-an-array) |
+| [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
