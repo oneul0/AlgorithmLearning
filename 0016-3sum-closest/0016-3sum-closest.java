@@ -4,30 +4,23 @@ class Solution {
         int answer = nums[0] + nums[1] + nums[2];
 
         for(int i = 0; i<nums.length-2; i++){
-            for(int j = i+1; j<nums.length-1; j++){
-                int need = target - nums[i] -nums[j];
+            int l = i+1;
+            int r = nums.length-1;
+            while(l<r){
+                int sum = nums[l] + nums[r] + nums[i];
 
-                int l = j+1;
-                int r = nums.length-1;
-                while(l<=r){
-                    int mid = (l+r)/2;
+                if(Math.abs(sum - target) < Math.abs(answer - target)){
+                    answer = sum;
+                }
 
-                    int sum = nums[i] + nums[j] + nums[mid];
-
-                    if(Math.abs(sum - target) < Math.abs(answer - target)){
-                        answer = sum;
-                    }
-
-                    if(nums[mid] < need){
-                        l = mid+1;
-                    }
-                    else{
-                        r = mid-1;
-                    }
+                if(sum < target){
+                    l++;
+                }
+                else{
+                    r--;
                 }
             }
         }
-
         return answer;
     }
 }
