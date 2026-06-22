@@ -205,6 +205,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
+| [0481-magical-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0481-magical-string) |
 | [0482-license-key-formatting](https://github.com/oneul0/AlgorithmLearning/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/oneul0/AlgorithmLearning/tree/master/0520-detect-capital) |
 | [0686-repeated-string-match](https://github.com/oneul0/AlgorithmLearning/tree/master/0686-repeated-string-match) |
@@ -261,6 +262,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0026-remove-duplicates-from-sorted-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0141-linked-list-cycle](https://github.com/oneul0/AlgorithmLearning/tree/master/0141-linked-list-cycle) |
+| [0481-magical-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0481-magical-string) |
 | [0633-sum-of-square-numbers](https://github.com/oneul0/AlgorithmLearning/tree/master/0633-sum-of-square-numbers) |
 | [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 ## Matrix
