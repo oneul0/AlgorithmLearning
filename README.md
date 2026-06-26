@@ -208,6 +208,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0014-longest-common-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/0014-longest-common-prefix) |
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
+| [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
 | [0424-longest-repeating-character-replacement](https://github.com/oneul0/AlgorithmLearning/tree/master/0424-longest-repeating-character-replacement) |
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0481-magical-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0481-magical-string) |
@@ -331,6 +332,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String Matching
 |  |
 | ------- |
+| [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0686-repeated-string-match](https://github.com/oneul0/AlgorithmLearning/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0796-rotate-string) |
@@ -359,4 +361,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0493-reverse-pairs](https://github.com/oneul0/AlgorithmLearning/tree/master/0493-reverse-pairs) |
+## Rolling Hash
+|  |
+| ------- |
+| [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
+## Hash Function
+|  |
+| ------- |
+| [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
 <!---LeetCode Topics End-->
