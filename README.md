@@ -221,6 +221,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/oneul0/AlgorithmLearning/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [1392-longest-happy-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/1392-longest-happy-prefix) |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 | [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 ## Tree
 |  |
@@ -243,6 +244,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0704-binary-search](https://github.com/oneul0/AlgorithmLearning/tree/master/0704-binary-search) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 ## Sorting
 |  |
 | ------- |
@@ -338,6 +340,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0686-repeated-string-match](https://github.com/oneul0/AlgorithmLearning/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0796-rotate-string) |
 | [1392-longest-happy-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/1392-longest-happy-prefix) |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 ## Recursion
 |  |
 | ------- |
@@ -368,9 +371,15 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
 | [1392-longest-happy-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/1392-longest-happy-prefix) |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 ## Hash Function
 |  |
 | ------- |
 | [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
 | [1392-longest-happy-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/1392-longest-happy-prefix) |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
+## Suffix Array
+|  |
+| ------- |
+| [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 <!---LeetCode Topics End-->
