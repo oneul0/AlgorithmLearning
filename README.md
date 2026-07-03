@@ -94,6 +94,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0232-implement-queue-using-stacks](https://github.com/oneul0/AlgorithmLearning/tree/master/0232-implement-queue-using-stacks) |
+| [0394-decode-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0394-decode-string) |
 | [0636-exclusive-time-of-functions](https://github.com/oneul0/AlgorithmLearning/tree/master/0636-exclusive-time-of-functions) |
 | [0739-daily-temperatures](https://github.com/oneul0/AlgorithmLearning/tree/master/0739-daily-temperatures) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
@@ -209,6 +210,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0020-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/0020-valid-parentheses) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0214-shortest-palindrome](https://github.com/oneul0/AlgorithmLearning/tree/master/0214-shortest-palindrome) |
+| [0394-decode-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0394-decode-string) |
 | [0424-longest-repeating-character-replacement](https://github.com/oneul0/AlgorithmLearning/tree/master/0424-longest-repeating-character-replacement) |
 | [0459-repeated-substring-pattern](https://github.com/oneul0/AlgorithmLearning/tree/master/0459-repeated-substring-pattern) |
 | [0481-magical-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0481-magical-string) |
@@ -348,6 +350,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/oneul0/AlgorithmLearning/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0206-reverse-linked-list) |
+| [0394-decode-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0394-decode-string) |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/oneul0/AlgorithmLearning/tree/master/1545-find-kth-bit-in-nth-binary-string) |
 ## Trie
 |  |
