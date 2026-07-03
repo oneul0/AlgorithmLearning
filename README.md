@@ -221,6 +221,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1249-minimum-remove-to-make-valid-parentheses](https://github.com/oneul0/AlgorithmLearning/tree/master/1249-minimum-remove-to-make-valid-parentheses) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/oneul0/AlgorithmLearning/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [1392-longest-happy-prefix](https://github.com/oneul0/AlgorithmLearning/tree/master/1392-longest-happy-prefix) |
+| [1545-find-kth-bit-in-nth-binary-string](https://github.com/oneul0/AlgorithmLearning/tree/master/1545-find-kth-bit-in-nth-binary-string) |
 | [2223-sum-of-scores-of-built-strings](https://github.com/oneul0/AlgorithmLearning/tree/master/2223-sum-of-scores-of-built-strings) |
 | [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 ## Tree
@@ -320,6 +321,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1441-build-an-array-with-stack-operations](https://github.com/oneul0/AlgorithmLearning/tree/master/1441-build-an-array-with-stack-operations) |
+| [1545-find-kth-bit-in-nth-binary-string](https://github.com/oneul0/AlgorithmLearning/tree/master/1545-find-kth-bit-in-nth-binary-string) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/oneul0/AlgorithmLearning/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1929-concatenation-of-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1929-concatenation-of-array) |
 | [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
@@ -346,6 +348,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/oneul0/AlgorithmLearning/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/oneul0/AlgorithmLearning/tree/master/0206-reverse-linked-list) |
+| [1545-find-kth-bit-in-nth-binary-string](https://github.com/oneul0/AlgorithmLearning/tree/master/1545-find-kth-bit-in-nth-binary-string) |
 ## Trie
 |  |
 | ------- |
