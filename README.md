@@ -67,6 +67,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Depth-First Search
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
@@ -92,6 +93,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
 | [0084-largest-rectangle-in-histogram](https://github.com/oneul0/AlgorithmLearning/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
+| [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0232-implement-queue-using-stacks](https://github.com/oneul0/AlgorithmLearning/tree/master/0232-implement-queue-using-stacks) |
 | [0394-decode-string](https://github.com/oneul0/AlgorithmLearning/tree/master/0394-decode-string) |
@@ -230,12 +232,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Tree
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
 ## Binary Tree
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
 ## Binary Search
