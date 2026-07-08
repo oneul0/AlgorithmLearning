@@ -38,6 +38,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [0912-sort-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0912-sort-an-array) |
 | [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
+| [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 | [1004-max-consecutive-ones-iii](https://github.com/oneul0/AlgorithmLearning/tree/master/1004-max-consecutive-ones-iii) |
 | [1046-last-stone-weight](https://github.com/oneul0/AlgorithmLearning/tree/master/1046-last-stone-weight) |
 | [1200-minimum-absolute-difference](https://github.com/oneul0/AlgorithmLearning/tree/master/1200-minimum-absolute-difference) |
@@ -121,6 +122,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0150-evaluate-reverse-polish-notation](https://github.com/oneul0/AlgorithmLearning/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0633-sum-of-square-numbers](https://github.com/oneul0/AlgorithmLearning/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
+| [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 | [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
 ## Prefix Sum
 |  |
@@ -147,6 +149,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0560-subarray-sum-equals-k](https://github.com/oneul0/AlgorithmLearning/tree/master/0560-subarray-sum-equals-k) |
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
+| [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/oneul0/AlgorithmLearning/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/oneul0/AlgorithmLearning/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1386-cinema-seat-allocation](https://github.com/oneul0/AlgorithmLearning/tree/master/1386-cinema-seat-allocation) |
@@ -403,4 +406,9 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0128-longest-consecutive-sequence) |
+| [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
+## Number Theory
+|  |
+| ------- |
+| [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 <!---LeetCode Topics End-->
