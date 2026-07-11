@@ -54,6 +54,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1887-reduction-operations-to-make-the-array-elements-equal](https://github.com/oneul0/AlgorithmLearning/tree/master/1887-reduction-operations-to-make-the-array-elements-equal) |
 | [1929-concatenation-of-array](https://github.com/oneul0/AlgorithmLearning/tree/master/1929-concatenation-of-array) |
 | [1944-number-of-visible-people-in-a-queue](https://github.com/oneul0/AlgorithmLearning/tree/master/1944-number-of-visible-people-in-a-queue) |
+| [2065-maximum-path-quality-of-a-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/2065-maximum-path-quality-of-a-graph) |
 | [2073-time-needed-to-buy-tickets](https://github.com/oneul0/AlgorithmLearning/tree/master/2073-time-needed-to-buy-tickets) |
 | [2672-number-of-adjacent-elements-with-the-same-color](https://github.com/oneul0/AlgorithmLearning/tree/master/2672-number-of-adjacent-elements-with-the-same-color) |
 ## Dynamic Programming
@@ -84,6 +85,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [1557-minimum-number-of-vertices-to-reach-all-nodes](https://github.com/oneul0/AlgorithmLearning/tree/master/1557-minimum-number-of-vertices-to-reach-all-nodes) |
+| [2065-maximum-path-quality-of-a-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/2065-maximum-path-quality-of-a-graph) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
 | [2508-add-edges-to-make-degrees-of-all-nodes-even](https://github.com/oneul0/AlgorithmLearning/tree/master/2508-add-edges-to-make-degrees-of-all-nodes-even) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
@@ -333,6 +335,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0093-restore-ip-addresses](https://github.com/oneul0/AlgorithmLearning/tree/master/0093-restore-ip-addresses) |
 | [1415-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n](https://github.com/oneul0/AlgorithmLearning/tree/master/1415-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n) |
 | [2048-next-greater-numerically-balanced-number](https://github.com/oneul0/AlgorithmLearning/tree/master/2048-next-greater-numerically-balanced-number) |
+| [2065-maximum-path-quality-of-a-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/2065-maximum-path-quality-of-a-graph) |
 ## Enumeration
 |  |
 | ------- |
