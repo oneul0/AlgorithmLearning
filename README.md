@@ -73,12 +73,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
+| [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
+| [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Graph Theory
 |  |
@@ -87,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1557-minimum-number-of-vertices-to-reach-all-nodes](https://github.com/oneul0/AlgorithmLearning/tree/master/1557-minimum-number-of-vertices-to-reach-all-nodes) |
 | [2065-maximum-path-quality-of-a-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/2065-maximum-path-quality-of-a-graph) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
+| [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2508-add-edges-to-make-degrees-of-all-nodes-even](https://github.com/oneul0/AlgorithmLearning/tree/master/2508-add-edges-to-make-degrees-of-all-nodes-even) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Topological Sort
@@ -415,6 +418,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0128-longest-consecutive-sequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0128-longest-consecutive-sequence) |
 | [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
+| [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 ## Number Theory
 |  |
 | ------- |
