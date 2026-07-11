@@ -49,11 +49,7 @@ class Solution {
 
             visitCount[next]++;
 
-            dfs(
-                next,
-                time + cost,
-                quality + (firstVisit ? values[next] : 0)
-            );
+            dfs(next, time + cost, quality + (firstVisit ? values[next] : 0));
 
             visitCount[next]--;
         }
