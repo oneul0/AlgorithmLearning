@@ -74,6 +74,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
+| [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
@@ -82,6 +83,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
+| [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Graph Theory
@@ -90,6 +92,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [1557-minimum-number-of-vertices-to-reach-all-nodes](https://github.com/oneul0/AlgorithmLearning/tree/master/1557-minimum-number-of-vertices-to-reach-all-nodes) |
+| [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2065-maximum-path-quality-of-a-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/2065-maximum-path-quality-of-a-graph) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
@@ -421,6 +424,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0128-longest-consecutive-sequence) |
 | [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
+| [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 ## Number Theory
