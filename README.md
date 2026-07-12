@@ -78,6 +78,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
 | [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
+| [2685-count-the-number-of-complete-components](https://github.com/oneul0/AlgorithmLearning/tree/master/2685-count-the-number-of-complete-components) |
 | [2791-count-paths-that-can-form-a-palindrome-in-a-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/2791-count-paths-that-can-form-a-palindrome-in-a-tree) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Breadth-First Search
@@ -88,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
+| [2685-count-the-number-of-complete-components](https://github.com/oneul0/AlgorithmLearning/tree/master/2685-count-the-number-of-complete-components) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Graph Theory
 |  |
@@ -100,6 +102,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2508-add-edges-to-make-degrees-of-all-nodes-even](https://github.com/oneul0/AlgorithmLearning/tree/master/2508-add-edges-to-make-degrees-of-all-nodes-even) |
+| [2685-count-the-number-of-complete-components](https://github.com/oneul0/AlgorithmLearning/tree/master/2685-count-the-number-of-complete-components) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Topological Sort
 |  |
@@ -431,6 +434,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2076-process-restricted-friend-requests](https://github.com/oneul0/AlgorithmLearning/tree/master/2076-process-restricted-friend-requests) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
+| [2685-count-the-number-of-complete-components](https://github.com/oneul0/AlgorithmLearning/tree/master/2685-count-the-number-of-complete-components) |
 ## Number Theory
 |  |
 | ------- |
