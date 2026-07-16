@@ -36,6 +36,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
 | [0704-binary-search](https://github.com/oneul0/AlgorithmLearning/tree/master/0704-binary-search) |
 | [0739-daily-temperatures](https://github.com/oneul0/AlgorithmLearning/tree/master/0739-daily-temperatures) |
+| [0815-bus-routes](https://github.com/oneul0/AlgorithmLearning/tree/master/0815-bus-routes) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0852-peak-index-in-a-mountain-array) |
 | [0912-sort-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0912-sort-an-array) |
 | [0932-beautiful-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0932-beautiful-array) |
@@ -88,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0463-island-perimeter](https://github.com/oneul0/AlgorithmLearning/tree/master/0463-island-perimeter) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
+| [0815-bus-routes](https://github.com/oneul0/AlgorithmLearning/tree/master/0815-bus-routes) |
 | [1311-get-watched-videos-by-your-friends](https://github.com/oneul0/AlgorithmLearning/tree/master/1311-get-watched-videos-by-your-friends) |
 | [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
@@ -172,6 +174,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0560-subarray-sum-equals-k](https://github.com/oneul0/AlgorithmLearning/tree/master/0560-subarray-sum-equals-k) |
 | [0645-set-mismatch](https://github.com/oneul0/AlgorithmLearning/tree/master/0645-set-mismatch) |
+| [0815-bus-routes](https://github.com/oneul0/AlgorithmLearning/tree/master/0815-bus-routes) |
 | [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
 | [1311-get-watched-videos-by-your-friends](https://github.com/oneul0/AlgorithmLearning/tree/master/1311-get-watched-videos-by-your-friends) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/oneul0/AlgorithmLearning/tree/master/1358-number-of-substrings-containing-all-three-characters) |
