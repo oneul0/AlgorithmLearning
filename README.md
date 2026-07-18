@@ -76,6 +76,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0094-binary-tree-inorder-traversal](https://github.com/oneul0/AlgorithmLearning/tree/master/0094-binary-tree-inorder-traversal) |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0463-island-perimeter](https://github.com/oneul0/AlgorithmLearning/tree/master/0463-island-perimeter) |
+| [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [1339-maximum-product-of-splitted-binary-tree](https://github.com/oneul0/AlgorithmLearning/tree/master/1339-maximum-product-of-splitted-binary-tree) |
 | [1971-find-if-path-exists-in-graph](https://github.com/oneul0/AlgorithmLearning/tree/master/1971-find-if-path-exists-in-graph) |
@@ -88,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
 | [0463-island-perimeter](https://github.com/oneul0/AlgorithmLearning/tree/master/0463-island-perimeter) |
+| [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [0815-bus-routes](https://github.com/oneul0/AlgorithmLearning/tree/master/0815-bus-routes) |
 | [1311-get-watched-videos-by-your-friends](https://github.com/oneul0/AlgorithmLearning/tree/master/1311-get-watched-videos-by-your-friends) |
@@ -99,6 +101,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0207-course-schedule](https://github.com/oneul0/AlgorithmLearning/tree/master/0207-course-schedule) |
+| [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
 | [1311-get-watched-videos-by-your-friends](https://github.com/oneul0/AlgorithmLearning/tree/master/1311-get-watched-videos-by-your-friends) |
 | [1557-minimum-number-of-vertices-to-reach-all-nodes](https://github.com/oneul0/AlgorithmLearning/tree/master/1557-minimum-number-of-vertices-to-reach-all-nodes) |
@@ -228,6 +231,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0239-sliding-window-maximum](https://github.com/oneul0/AlgorithmLearning/tree/master/0239-sliding-window-maximum) |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/oneul0/AlgorithmLearning/tree/master/0373-find-k-pairs-with-smallest-sums) |
+| [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 | [0912-sort-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0912-sort-an-array) |
 | [1046-last-stone-weight](https://github.com/oneul0/AlgorithmLearning/tree/master/1046-last-stone-weight) |
 | [1354-construct-target-array-with-multiple-sums](https://github.com/oneul0/AlgorithmLearning/tree/master/1354-construct-target-array-with-multiple-sums) |
@@ -447,4 +451,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0952-largest-component-size-by-common-factor](https://github.com/oneul0/AlgorithmLearning/tree/master/0952-largest-component-size-by-common-factor) |
+## Shortest Path
+|  |
+| ------- |
+| [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 <!---LeetCode Topics End-->
