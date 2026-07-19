@@ -111,6 +111,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [2203-minimum-weighted-subgraph-with-the-required-paths](https://github.com/oneul0/AlgorithmLearning/tree/master/2203-minimum-weighted-subgraph-with-the-required-paths) |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/oneul0/AlgorithmLearning/tree/master/2492-minimum-score-of-a-path-between-two-cities) |
 | [2508-add-edges-to-make-degrees-of-all-nodes-even](https://github.com/oneul0/AlgorithmLearning/tree/master/2508-add-edges-to-make-degrees-of-all-nodes-even) |
+| [2642-design-graph-with-shortest-path-calculator](https://github.com/oneul0/AlgorithmLearning/tree/master/2642-design-graph-with-shortest-path-calculator) |
 | [2685-count-the-number-of-complete-components](https://github.com/oneul0/AlgorithmLearning/tree/master/2685-count-the-number-of-complete-components) |
 | [2858-minimum-edge-reversals-so-every-node-is-reachable](https://github.com/oneul0/AlgorithmLearning/tree/master/2858-minimum-edge-reversals-so-every-node-is-reachable) |
 ## Topological Sort
@@ -237,6 +238,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1046-last-stone-weight](https://github.com/oneul0/AlgorithmLearning/tree/master/1046-last-stone-weight) |
 | [1354-construct-target-array-with-multiple-sums](https://github.com/oneul0/AlgorithmLearning/tree/master/1354-construct-target-array-with-multiple-sums) |
 | [2203-minimum-weighted-subgraph-with-the-required-paths](https://github.com/oneul0/AlgorithmLearning/tree/master/2203-minimum-weighted-subgraph-with-the-required-paths) |
+| [2642-design-graph-with-shortest-path-calculator](https://github.com/oneul0/AlgorithmLearning/tree/master/2642-design-graph-with-shortest-path-calculator) |
 ## Merge Sort
 |  |
 | ------- |
@@ -388,6 +390,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0232-implement-queue-using-stacks](https://github.com/oneul0/AlgorithmLearning/tree/master/0232-implement-queue-using-stacks) |
+| [2642-design-graph-with-shortest-path-calculator](https://github.com/oneul0/AlgorithmLearning/tree/master/2642-design-graph-with-shortest-path-calculator) |
 ## String Matching
 |  |
 | ------- |
@@ -458,4 +461,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0743-network-delay-time](https://github.com/oneul0/AlgorithmLearning/tree/master/0743-network-delay-time) |
 | [2203-minimum-weighted-subgraph-with-the-required-paths](https://github.com/oneul0/AlgorithmLearning/tree/master/2203-minimum-weighted-subgraph-with-the-required-paths) |
+| [2642-design-graph-with-shortest-path-calculator](https://github.com/oneul0/AlgorithmLearning/tree/master/2642-design-graph-with-shortest-path-calculator) |
 <!---LeetCode Topics End-->
