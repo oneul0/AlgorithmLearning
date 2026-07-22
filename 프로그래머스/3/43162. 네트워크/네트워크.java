@@ -1,50 +1,41 @@
 import java.util.*;
 class Solution {
-    ArrayList<ArrayList<Integer>> gr = new ArrayList<>();
-    int n = 0;
-    boolean[] chk;
+    List<List<Integer>> gr = new ArrayList<>();
+    boolean[] visited;
     public int solution(int n, int[][] computers) {
-        int answer = 0;
-        this.n = n;
-        chk =  new boolean[n];
-        for(int i = 0; i<computers.length; i++){
+        visited = new boolean[n];
+        for(int i = 0; i<n; i++){
             gr.add(new ArrayList<>());
         }
-        
         for(int i = 0; i<computers.length; i++){
             for(int j = 0; j<computers[i].length; j++){
-                if(computers[i][j] == 1) {
+                if(i == j) continue;
+                if(computers[i][j] == 1){
                     gr.get(i).add(j);
-                    gr.get(j).add(i);
                 }
             }
         }
-        
+
+        int answer = 0;
         for(int i = 0; i<n; i++){
-            if(!chk[i]){
-                bfs(i);
-                answer++;
-            }
+            if(visited[i]) continue;
+            answer++;
+            bfs(i);
         }
-        
         return answer;
     }
-    
-    void bfs(int sx){
+    public void bfs(int sx){
         Queue<Integer> q = new ArrayDeque<>();
-        
-        q.add(sx);
-        chk[sx] = true;
-        
+        q.offer(sx);
+        visited[sx] = true;
         while(!q.isEmpty()){
-            int cx = q.remove();
-            for(int nxt : gr.get(cx)){
-                if(!chk[nxt]){
-                    q.add(nxt);
-                    chk[nxt] = true;
-                }
+            int cur = q.poll();
+            
+            for(int next : gr.get(cur)){
+                if(visited[next]) continue;
+                q.offer(next);
+                visited[next] = true;
             }
         }
-        
     }
 }
