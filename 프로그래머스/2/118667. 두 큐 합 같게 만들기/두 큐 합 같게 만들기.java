@@ -1,34 +1,64 @@
-import java.util.*;
-
 class Solution {
+    /**
+        투포인터와 슬라이딩 윈도우로 푸는 방법
+        전체합 = 큐1의 합 + 큐2의 합 일때,
+        큐1의 합 == 전체합/2 이 되도록 만들면 됨
+        
+        이때, 윈도우는 큐1의 합이고
+        윈도우의 합(window value < target || window value > target) 따라
+        현재 합 > target → 왼쪽 포인터 이동
+        현재 합 < target → 오른쪽 포인터 이동
+        
+        업다운 게임이랑 비슷함
+        현재 합을 올려야 함 → queue2의 맨 앞 원소를 queue1으로 이동
+        현재 합을 내려야 함 → queue1의 맨 앞 원소를 queue2로 이동
+        
+    */
     public int solution(int[] queue1, int[] queue2) {
-        int answer = 0;
-        long sum1 = 0, sum2 = 0;
-        Queue<Integer> q1 = new ArrayDeque<>();
-        for (int i = 0; i < queue1.length; i++) {
-            q1.add(queue1[i]);
-            sum1 += queue1[i];
+        int len = queue1.length+queue2.length;
+        int[] totalArr = new int[len];
+        
+        long totalSum = 0;
+        long q1Sum = 0;
+        
+        int idx = 0;
+        for(int i = 0; i<queue1.length; i++){
+            totalArr[idx++] = queue1[i];
+            totalSum += queue1[i];
+            q1Sum += queue1[i];
         }
-
-        Queue<Integer> q2 = new ArrayDeque<>();
-        for (int i = 0; i < queue2.length; i++) {
-            q2.add(queue2[i]);
-            sum2 += queue2[i];
+        
+        for(int i = 0; i<queue2.length; i++){
+            totalArr[idx++] = queue2[i];
+            totalSum += queue2[i];
         }
-
-        while (sum1 != sum2) {
-            if(answer> queue1.length+queue2.length+1) return -1;
-            if (sum1 > sum2) {
-                sum1 -= q1.peek();
-                sum2 += q1.peek();
-                q2.add(q1.remove());
-            } else if (sum1 < sum2) {
-                sum2 -= q2.peek();
-                sum1 += q2.peek();
-                q1.add(q2.remove());
+        
+        if(totalSum%2 == 1) return -1;
+        
+        long targetSum = totalSum >>>1;
+        
+        //투포인터
+        int count = 0;
+        int i1 = 0, i2= queue1.length;
+        while(i1<i2 && i1<len){
+            if(q1Sum > targetSum){
+                q1Sum -= totalArr[i1++];
+                count++;
             }
-            answer++;
+            else if(q1Sum < targetSum){
+                if(i2 >= len) return -1;
+                q1Sum += totalArr[i2++];
+                count++;
+            }
+            else{
+                return count;
+            }
         }
-        return answer;
+        
+        //슬라이딩 윈도우로도 될 거 같은데
+        
+        return -1;
     }
 }
+
+ 
