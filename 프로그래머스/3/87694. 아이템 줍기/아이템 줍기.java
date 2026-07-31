@@ -1,86 +1,74 @@
 import java.util.*;
-
 class Solution {
-    int[][] map, rectangle;
-    int[] dx = {-1, 1, 0, 0};
-    int[] dy = {0, 0, -1, 1};
-    boolean[][] visited;
-
+    class Point {
+        int x, y, dist;
+        Point(int x, int y, int dist){
+            this.x = x;
+            this.y = y;
+            this.dist = dist;
+        }
+    }
+    final int SIZE = 101;
+    int[][] board = new int[SIZE][SIZE];
+    int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
     public int solution(int[][] rectangle, int characterX, int characterY, int itemX, int itemY) {
-        int answer = 0;
-        map = new int[102][102];
-        visited = new boolean[102][102];
-        this.rectangle = rectangle;
-
-        for (int[] rec : rectangle) {
-            int xmin = rec[0] * 2;
-            int ymin = rec[1] * 2;
-            int xmax = rec[2] * 2;
-            int ymax = rec[3] * 2;
-
-            for (int x = xmin; x <= xmax; x++) {
-                for (int y = ymin; y <= ymax; y++) {
-                    if (x == xmin || x == xmax || y == ymin || y == ymax) {
-                        map[x][y] = -1;
-                    } else {
-                        map[x][y] = 0;
-                    }
-                }
-            }
+        for(int[] rect : rectangle){
+            draw(rect); 
         }
-
-        Queue<Pair> q = new ArrayDeque<>();
-        int ix = itemX * 2;
-        int iy = itemY * 2;
-
-        q.offer(new Pair(characterX * 2, characterY * 2, 0));
-        visited[characterX * 2][characterY * 2] = true;
-
-        while (!q.isEmpty()) {
-            Pair cur = q.remove();
-            int cx = cur.x;
-            int cy = cur.y;
-
-            if (cx == ix && cy == iy) {
-                answer = cur.dist / 2;
-                break;
-            }
-
-            for (int i = 0; i < 4; i++) {
-                int nx = cx + dx[i];
-                int ny = cy + dy[i];
-
-                if (map[nx][ny] == -1 && isIn(nx, ny) && !visited[nx][ny]) {
+        for(int[] rect : rectangle){
+            removeInSide(rect); 
+        }
+        
+        return bfs(characterX*2, characterY*2, itemX*2, itemY*2)/2;
+    }
+    
+    public int bfs(int sx, int sy, int ex, int ey){
+        Queue<Point> q = new ArrayDeque<>();
+        q.offer(new Point(sx, sy, 0));
+        boolean[][] visited = new boolean[SIZE][SIZE];
+        visited[sx][sy] = true;
+        
+        while(!q.isEmpty()){
+            Point cur = q.poll();
+            
+            for(int i = 0; i<4; i++){
+                int nx = cur.x + dx[i];
+                int ny = cur.y + dy[i];
+                if(nx<0 || ny<0 || nx>=SIZE || ny>=SIZE) continue;
+                if(board[nx][ny] == 0) continue;
+                if(nx == ex && ny == ey) return cur.dist+1;
+                if(!visited[nx][ny]) {
+                    q.offer(new Point(nx, ny, cur.dist + 1));
                     visited[nx][ny] = true;
-                    q.offer(new Pair(nx, ny, cur.dist + 1));
                 }
             }
         }
-
-        return answer;
+        return -1;
     }
-
-    boolean isIn(int nx, int ny) {
-        for (int[] rec : rectangle) {
-            int xmin = rec[0] * 2;
-            int ymin = rec[1] * 2;
-            int xmax = rec[2] * 2;
-            int ymax = rec[3] * 2;
-
-            if (nx > xmin && nx < xmax && ny > ymin && ny < ymax) return false;
-            if ((nx == xmin || nx == xmax) && (ny >= ymin && ny <= ymax)) return true;
-            if ((ny == ymin || ny == ymax) && (nx >= xmin && nx <= xmax)) return true;
+    
+    public void draw(int[] rect){
+        int sr = rect[0]*2;
+        int sc = rect[1]*2;
+        int er = rect[2]*2;
+        int ec = rect[3]*2;
+        for(int r = sr; r<=er; r++){
+            for(int c = sc; c<=ec; c++){
+                board[r][c] = 1;
+            }
         }
-        return false;
     }
-}
-
-class Pair {
-    int x, y, dist;
-
-    Pair(int x, int y, int dist) {
-        this.x = x;
-        this.y = y;
-        this.dist = dist;
+    public void removeInSide(int[] rect){
+        int sr = rect[0]*2;
+        int sc = rect[1]*2;
+        int er = rect[2]*2;
+        int ec = rect[3]*2;
+        for(int r = sr+1; r<er; r++){
+            for(int c = sc+1; c<ec; c++){
+                board[r][c] = 0;
+            }
+        }
     }
+    
 }
+//사각형 그리고 bfs나 다익스트라 돌리면 될 듯
+//관통하네..
