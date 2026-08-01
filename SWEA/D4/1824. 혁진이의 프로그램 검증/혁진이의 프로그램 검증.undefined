@@ -1,0 +1,188 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+
+    static final int[] DX = {-1, 1, 0, 0};
+    static final int[] DY = {0, 0, -1, 1};
+
+    static class Program {
+        int x;
+        int y;
+        int mem;
+        int direction;
+
+        Program() {
+            this.x = 0;
+            this.y = 0;
+            this.mem = 0;
+            this.direction = 3; // 오른쪽
+        }
+
+        Program(Program program) {
+            this.x = program.x;
+            this.y = program.y;
+            this.mem = program.mem;
+            this.direction = program.direction;
+        }
+
+        public void setDirection(int direction) {
+            this.direction = direction;
+        }
+
+        public void move(int R, int C) {
+            this.x = (this.x + DX[this.direction] + R) % R;
+            this.y = (this.y + DY[this.direction] + C) % C;
+        }
+
+        public void horizonCmd() {
+            // 메모리 0이면 오른쪽, 아니면 왼쪽
+            this.direction = this.mem == 0 ? 3 : 2;
+        }
+
+        public void verticalCmd() {
+            // 메모리 0이면 아래쪽, 아니면 위쪽
+            this.direction = this.mem == 0 ? 1 : 0;
+        }
+
+        public void plus() {
+            this.mem = (this.mem + 1) % 16;
+        }
+
+        public void minus() {
+            this.mem = (this.mem + 15) % 16;
+        }
+
+        public void setMem(int value) {
+            this.mem = value;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(System.in)
+        );
+
+        StringBuilder sb = new StringBuilder();
+
+        int T = Integer.parseInt(br.readLine());
+
+        for (int testCase = 1; testCase <= T; testCase++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            int R = Integer.parseInt(st.nextToken());
+            int C = Integer.parseInt(st.nextToken());
+
+            char[][] cmds = new char[R][C];
+
+            for (int i = 0; i < R; i++) {
+                cmds[i] = br.readLine().toCharArray();
+            }
+
+            sb.append('#')
+              .append(testCase)
+              .append(' ')
+              .append(solve(cmds, R, C))
+              .append('\n');
+        }
+
+        System.out.print(sb);
+    }
+
+    public static String solve(char[][] cmds, int R, int C) {
+        // visited[x][y][memory][direction]
+        boolean[][][][] visited = new boolean[R][C][16][4];
+        Queue<Program> queue = new ArrayDeque<>();
+        Program start = new Program();
+
+        visited[start.x][start.y][start.mem][start.direction] = true;
+        queue.offer(start);
+
+        while (!queue.isEmpty()) {
+            Program program = queue.poll();
+
+            int x = program.x;
+            int y = program.y;
+
+            char command = cmds[x][y];
+
+            if (command == '@') {
+                return "YES";
+            }
+
+            if (command == '?') {
+                // 네 방향을 전부 탐색
+                for (int direction = 0; direction < 4; direction++) {
+                    Program next = new Program(program);
+
+                    next.setDirection(direction);
+                    next.move(R, C);
+
+                    if (!visited[next.x][next.y][next.mem][next.direction]) {
+                        visited[next.x][next.y][next.mem][next.direction] = true;
+                        queue.offer(next);
+                    }
+                }
+            } else {
+                executeCmd(command, program);
+                program.move(R, C);
+
+                if (!visited[program.x][program.y]
+                            [program.mem][program.direction]) {
+
+                    visited[program.x][program.y]
+                           [program.mem][program.direction] = true;
+
+                    queue.offer(program);
+                }
+            }
+        }
+
+        return "NO";
+    }
+
+    public static void executeCmd(char command, Program program) {
+        switch (command) {
+            case '<':
+                program.setDirection(2);
+                break;
+
+            case '>':
+                program.setDirection(3);
+                break;
+
+            case '^':
+                program.setDirection(0);
+                break;
+
+            case 'v':
+                program.setDirection(1);
+                break;
+
+            case '_':
+                program.horizonCmd();
+                break;
+
+            case '|':
+                program.verticalCmd();
+                break;
+
+            case '+':
+                program.plus();
+                break;
+
+            case '-':
+                program.minus();
+                break;
+
+            case '.':
+                break;
+
+            default:
+                if ('0' <= command && command <= '9') {
+                    program.setMem(command - '0');
+                }
+                break;
+        }
+    }
+}
