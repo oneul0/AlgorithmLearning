@@ -1,10 +1,10 @@
 # [level 3] 광고 삽입 - 72414 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/72414?language=java#fn1) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/72414) 
 
 ### 성능 요약
 
-메모리: 312 MB, 시간: 344.53 ms
+메모리: 342 MB, 시간: 175.79 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 04월 11일 21:55:29
+2026년 08월 03일 17:52:54
 
 ### 문제 설명
 
