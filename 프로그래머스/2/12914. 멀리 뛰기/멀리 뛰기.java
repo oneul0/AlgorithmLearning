@@ -1,7 +1,6 @@
 class Solution {
     public long solution(int n) {
         if(n==1) return 1;
-        if(n==2) return 2;
         final int MOD = 1234567;
         long[] dp = new long[n+1];
         
