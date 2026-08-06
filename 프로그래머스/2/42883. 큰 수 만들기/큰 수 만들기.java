@@ -1,25 +1,36 @@
 import java.util.*;
+/*
+    숫자는 왼쪽의 값이 클 수록 큼
+    내 바로 뒤에 있는 숫자보다 내가 작으면 나를 지움
+    stack으로 처음부터 넣는다
+    뒤에 넣을 숫자가 stack top 보다 크면 stack pop
+    pop은 총 k 번 하기
+    9876 같이 역으로 정렬되어 있는 숫자는 이 방식이 안되니까
+    지운 값이 없을 경우 뒤에서 부터 k 개 잘라줘야 한다.
+*/
 class Solution {
     public String solution(String number, int k) {
         StringBuilder sb = new StringBuilder();
-        sb.append(number.charAt(0));
+        ArrayDeque<Character> stack = new ArrayDeque<>();
         
-        for(int i =1; i<number.length(); i++){
-            //이전에 온 수가 지금 만난 수보다 더 작은 경우
-            while(k > 0
-                  && sb.length()>0
-                  && sb.charAt(sb.length()-1) < number.charAt(i)){
-                sb.deleteCharAt(sb.length()-1);
+        for(char c: number.toCharArray()){
+            // stack이 비어있지 않고 peek 가 작으며, 더 빼야할 수가 남아있을 때 계속 반복
+            while (!stack.isEmpty() && stack.peek() < c && k>0){
+                stack.pop();
                 k--;
-            }
-            sb.append(number.charAt(i));
+            } 
+            stack.push(c);
         }
-        if(k>0){
-            sb.delete(sb.length()-k, sb.length());
+        
+        while (k > 0){
+            stack.pop();
+            k--;
         }
-        return sb.toString();
+        
+        for(char c: stack){
+            sb.append(c);
+        }
+        
+        return sb.reverse().toString();
     }
 }
-//단조감소스택으로 다음과 같이 구현
-//이전의 값이 이후에 오는 값보다 작으면 pop 
-//
