@@ -1,33 +1,50 @@
 import java.util.*;
-
 class Solution {
-    public int solution(int[][] jobs) {
-        int answer = 0, time = 0;
+    public class Job implements Comparable<Job> {
+        int idx;
+        int arrivalTime;
+        int processTime;
 
-        // 소요시간 우선순위 큐
-        PriorityQueue<int[]> workQ = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
-        // 작업 요청 시점 우선순위 큐
-        PriorityQueue<int[]> waitQ = new PriorityQueue<>((o1, o2) -> o1[0] - o2[0]);
-        
-        for(int[] j : jobs) waitQ.offer(j);
-
-        // 소요시간 우선순위 큐 또는 작업 요청 시점 우선순위 큐가 비어있지 않을 때
-        while(!waitQ.isEmpty() || !workQ.isEmpty()){
-            // 현재 시간에 수행 가능한 작업
-            while(!waitQ.isEmpty() && waitQ.peek()[0] <= time){
-                workQ.offer(waitQ.poll());
-            }
-
-            if(workQ.isEmpty()){
-                time = waitQ.peek()[0];
-            }
-            else{
-                int[] j = workQ.poll();
-                answer += time + j[1] - j[0];
-                time += j[1];
-            }
+        Job(int idx, int arrivalTime, int processTime) {
+            this.idx = idx;
+            this.arrivalTime = arrivalTime;
+            this.processTime = processTime;
         }
 
-        return answer / jobs.length;
+        @Override
+        public int compareTo(Job o) {
+            if (this.processTime != o.processTime) return this.processTime - o.processTime;
+            if (this.arrivalTime != o.arrivalTime) return this.arrivalTime - o.arrivalTime;
+
+            return this.idx - o.idx;
+        }
+    }
+
+    public int solution(int[][] jobs) {
+        Arrays.sort(jobs, (a,b) -> a[0] - b[0]);
+        PriorityQueue<Job> pq = new PriorityQueue<>();
+        int currentTime = 0;
+        int responseTimeSum = 0;
+        int idx = 0;
+        int completed = 0;
+
+        while (completed < jobs.length) {
+            while (idx<jobs.length && jobs[idx][0]<=currentTime) {
+                pq.offer(new Job(idx, jobs[idx][0], jobs[idx][1]));
+                idx++;
+            }
+            
+            if (pq.isEmpty()) {
+                currentTime = jobs[idx][0];
+                continue;
+            }
+
+            Job cur = pq.poll();
+            currentTime += cur.processTime;
+            responseTimeSum += currentTime - cur.arrivalTime;
+            completed++;
+        }
+
+        return responseTimeSum/jobs.length;
     }
 }
