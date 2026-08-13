@@ -1,46 +1,62 @@
 import java.util.*;
 class Solution {
-    int[][] q;
+    int n, m;
     int[] ans;
-    int answer = 0, n, m;
+    long[] question;
+    Set<Long> visited = new HashSet<>();
     public int solution(int n, int[][] q, int[] ans) {
-        this.q = q;
-        this.ans = ans;
         this.n = n;
-        this.m = m;
+        this.ans = ans;
+        this.m = q.length;
+        this.question = new long[m];
         
-        comb(1, 0);
+        for(int i = 0; i<m; i++){
+            long mask = 0L;
+            for(int t : q[i]){
+                mask = turnOn(mask, t);
+            }
+            question[i] = mask;
+        }
         
-        return answer;
+        return comb(0L, 0);
     }
     
-    int[] code = new int[5];
-    public void comb(int start, int len){
-        if(len >= 5){
-            HashSet<Integer> chk = new HashSet<>();
-            for(int c : code){
-                chk.add(c);
-            }
-            if(isCorrect(chk)) answer++;
-            return;
+    public int comb(long mask, int cur){
+        int result = 0;
+        if(cur == 5){
+            if(visited.contains(mask)) return 0;
+            visited.add(mask);
+            //chk
+            return chk(mask);
         }
-        for(int i = start; i<=n; i++){
-            code[len] = i;
-            comb(i+1, len+1);
+        //make comb
+        for(int i = 1; i<=n; i++){
+            if(isOn(mask, i)) continue;
+            result += comb(turnOn(mask, i), cur+1);
         }
+        return result;
     }
     
-    public boolean isCorrect(HashSet<Integer> chk){
-        for(int i = 0; i<q.length; i++){
-            int count = 0;
-            for(int num : q[i]){
-                if(chk.contains(num)) count++;
-            }
-            if(count != ans[i]) return false;
+    public int chk(long candidate){
+        for(int i = 0; i<m; i++){
+            //q와 비교해서
+            //ans와 다르면 컷
+            int cnt = Long.bitCount(candidate & question[i]);
+            if(ans[i] != cnt) return 0;
         }
-        return true;
+        return 1;
+    }
+    
+    public boolean isOn(long mask, int idx) {
+        return (mask & (1L << idx)) != 0;
+    }
+
+    public long turnOn(long mask, int idx) {
+        return mask | (1L << idx);
+    }
+
+    public long turnOff(long mask, int idx) {
+        return mask & ~(1L << idx);
     }
 }
-//조합 모두 생성
-//생성한 조합이 
-//응답에 따라 불가능한 조합 제거
+//q의 조합과 생성한 조합을 비교했을 때 ans(응답 결과)와 동일하다면 정답이 될 수 있는 것
