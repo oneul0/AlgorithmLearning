@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0033-search-in-rotated-sorted-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0033-search-in-rotated-sorted-array) |
 | [0041-first-missing-positive](https://github.com/oneul0/AlgorithmLearning/tree/master/0041-first-missing-positive) |
 | [0042-trapping-rain-water](https://github.com/oneul0/AlgorithmLearning/tree/master/0042-trapping-rain-water) |
+| [0046-permutations](https://github.com/oneul0/AlgorithmLearning/tree/master/0046-permutations) |
 | [0049-group-anagrams](https://github.com/oneul0/AlgorithmLearning/tree/master/0049-group-anagrams) |
 | [0056-merge-intervals](https://github.com/oneul0/AlgorithmLearning/tree/master/0056-merge-intervals) |
 | [0084-largest-rectangle-in-histogram](https://github.com/oneul0/AlgorithmLearning/tree/master/0084-largest-rectangle-in-histogram) |
@@ -365,6 +366,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Backtracking
 |  |
 | ------- |
+| [0046-permutations](https://github.com/oneul0/AlgorithmLearning/tree/master/0046-permutations) |
 | [0077-combinations](https://github.com/oneul0/AlgorithmLearning/tree/master/0077-combinations) |
 | [0093-restore-ip-addresses](https://github.com/oneul0/AlgorithmLearning/tree/master/0093-restore-ip-addresses) |
 | [0797-all-paths-from-source-to-target](https://github.com/oneul0/AlgorithmLearning/tree/master/0797-all-paths-from-source-to-target) |
