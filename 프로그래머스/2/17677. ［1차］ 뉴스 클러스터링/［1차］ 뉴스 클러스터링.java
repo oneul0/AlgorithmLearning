@@ -1,51 +1,24 @@
 import java.util.*;
 class Solution {
-    final int MUL = 65536;
-    
     public int solution(String str1, String str2) {
-        Map<String, Integer> A = makeSet(str1.toUpperCase());
-        Map<String, Integer> B = makeSet(str2.toUpperCase());
+        Map<String, Integer> map1 = new HashMap<>(), map2 = new HashMap<>();
+        addChunk(map1, str1.toLowerCase());
+        addChunk(map2, str2.toLowerCase());
+        if(map1.isEmpty() && map2.isEmpty()) return 65536;
 
-        if (A.isEmpty() && B.isEmpty()) return MUL;
-
-        long intersectionCnt = getItstnCount(A, B);
-        long unionCnt = getUnionCount(A, B);
-
-        return (int) ((double) intersectionCnt / unionCnt * MUL);
+        Map<String, Integer> union = new HashMap<>(map1), intersection = new HashMap<>();
+        map2.forEach((k, v) -> union.merge(k, v, Math::max));
+        map1.forEach((k, v) -> { if(map2.containsKey(k)) intersection.put(k, Math.min(v, map2.get(k))); } );
+        double unionSum = union.values().stream().mapToDouble(v -> v.doubleValue()).sum();
+        double intersectionSum = intersection.values().stream().mapToDouble(v -> v.doubleValue()).sum();
+        return (int)((intersectionSum / unionSum)*65536);
     }
-
-    public int getItstnCount(Map<String, Integer> A, Map<String, Integer> B) {
-        int count = 0;
-        for (String key : A.keySet()) {
-            if (B.containsKey(key)) {
-                count += Math.min(A.get(key), B.get(key));
-            }
+    public void addChunk(Map<String, Integer> map, String str){
+        for(int i = 0; i<str.length()-1; i++) {
+            String key = str.substring(i, i+2);
+            if(key.charAt(0)<'a' || key.charAt(1)<'a' || key.charAt(0)>'z' || key.charAt(1)>'z') continue;
+            map.compute(key, (k, v) -> v == null ? 1 : ++v);
         }
-        return count;
-    }
-
-    public int getUnionCount(Map<String, Integer> A, Map<String, Integer> B) {
-        int sumA = A.values().stream().mapToInt(Integer::intValue).sum();
-        int sumB = B.values().stream().mapToInt(Integer::intValue).sum();
-        int itstn = getItstnCount(A, B);
-
-        return sumA + sumB - itstn;
-    }
-    
-    public Map<String, Integer> makeSet(String str){
-        Map<String, Integer> result = new HashMap<>();
-        for(int i = 0; i<str.length()-1; i++){
-            char a = str.charAt(i);
-            char b = str.charAt(i+1);
-            if(!isAlphabet(a) || !isAlphabet(b)) continue;
-            String tmp = (a+"")+b;
-            result.putIfAbsent(tmp, 0);
-            result.put(tmp, result.get(tmp)+1);
-        }
-        return result;
-    }
-    
-    public boolean isAlphabet(char c) {
-        return (c>='A' && c<='Z');
     }
 }
+//중복원소도 가능함
