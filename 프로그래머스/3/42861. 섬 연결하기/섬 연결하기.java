@@ -1,44 +1,52 @@
 import java.util.*;
 class Solution {
-    int[] parents;
+    class Pair implements Comparable<Pair>{
+        int to, cost;
+        Pair(int to, int cost){
+            this.to = to;
+            this.cost = cost;
+        }
+        
+        @Override
+        public int compareTo(Pair o){
+            return this.cost - o.cost;
+        }
+    }
+    List<List<Pair>> gr = new ArrayList<>();
     public int solution(int n, int[][] costs) {
-        int answer=0;
-        parents = new int[n];
-        
-        for(int i = 0; i<n; i++){
-            parents[i] = i;
+        for(int i  =0; i<n; i++){
+            gr.add(new ArrayList<>());
+        }
+        for(int[] c : costs){
+            gr.get(c[0]).add(new Pair(c[1], c[2]));
+            gr.get(c[1]).add(new Pair(c[0], c[2]));
         }
         
-        Arrays.sort(costs, (a,b) -> Integer.compare(a[2], b[2]));
+        return prim(n);
+    }
+    
+    public int prim(int n){
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        pq.offer(new Pair(0,0));
+        boolean[] visited = new boolean[n];
         
-        int cnt = 0;
-        for(int[] cost : costs){
-            int a = cost[0];
-            int b = cost[1];
+        int result = 0, count = 0;
+        while(!pq.isEmpty()){
+            Pair cur = pq.poll();
             
-            if(find(a) != find(b)){
-                union(a,b);
-                answer+=cost[2];
-                cnt++;
-                
-                if(cnt == n-1) break;
+            if(visited[cur.to]) continue;
+            
+            result += cur.cost;
+            count++;
+            visited[cur.to] = true;
+            
+            for(Pair next : gr.get(cur.to)){
+                if(!visited[next.to]) pq.offer(next);
             }
+            
+            if(count >= n) break;
         }
-        return answer;
-    }
-    
-    void union(int x, int y){
-        x = find(x);
-        y = find(y);
         
-        if(x == y) return;
-        //x가 y의 부모이면
-        if(x <= y) parents[y] = x;
-        else parents[x] = y;
-    }
-    
-    int find(int cur){
-        if(parents[cur] == cur) return cur;
-        return find(parents[cur]);
+        return result;
     }
 }
