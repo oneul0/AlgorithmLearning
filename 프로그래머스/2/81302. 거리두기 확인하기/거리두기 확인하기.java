@@ -1,48 +1,42 @@
 import java.util.*;
 class Solution {
-    int[] dx = {-1,1,0,0};
-    int[] dy = {0,0,-1,1};
-    int n,m;
     public int[] solution(String[][] places) {
-        int[] answer = new int[places.length];
-        this.n = places.length;
-        this.m = places[0].length;
-        for(int i = 0; i<places.length; i++){
-            answer[i] = isValid(places[i]);
+        int n = places.length;
+        int[] answer = new int[n];
+        for(int i = 0; i<n; i++){
+            answer[i] = solve(places[i]);
         }
-        
         return answer;
     }
-    
-    
-    int isValid(String[] room){
-    //P찾기    
-        for(int i= 0; i<room.length; i++){
-            for(int j = 0; j<room[0].length(); j++){
-                if(room[i].charAt(j) == 'P')
-                    if(!bfs(i,j,room)) return 0;
+    public int solve(String[] place){
+        for(int i = 0; i<5; i++){
+            for(int j = 0; j<5; j++){
+                if(place[i].charAt(j) == 'P'){
+                    if(!bfs(place, i, j)) return 0;
+                }
             }
         }
-        return 1;
         
+        return 1;
     }
-    
-    //유효성검증
-    boolean bfs(int sx, int sy, String[] room){
-        Queue<int[]> q= new ArrayDeque<>();
-        boolean[][] chk = new boolean[n][m];
-        q.offer(new int[]{sx,sy,0});
-        chk[sx][sy] = true;
+    int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
+    public boolean bfs(String[] place, int sx, int sy){
+        Queue<int[]> q = new ArrayDeque<>();
+        q.offer(new int[]{sx, sy, 0});
+        boolean[][] visited = new boolean[5][5];
+        visited[sx][sy] = true;
         while(!q.isEmpty()){
-            int[] cur = q.remove();
-            
-            for(int i =0; i<4; i++){
-                int nx = cur[0]+dx[i];
-                int ny = cur[1]+dy[i];
-                if(cur[2] >= 2 || nx<0||ny<0||nx>=n||ny>=m||chk[nx][ny]||room[nx].charAt(ny) == 'X') continue;
-                if(room[nx].charAt(ny) == 'P') return false;
-                q.offer(new int[]{nx,ny,cur[2]+1});
-                chk[nx][ny] = true;
+            int[] cur = q.poll();
+            for(int i = 0; i<4; i++){
+                int nx = cur[0] + dx[i];
+                int ny = cur[1] + dy[i];
+                
+                if(nx<0 || ny<0 || nx>=5 || ny>=5) continue;
+                if(place[nx].charAt(ny) == 'X' || visited[nx][ny]) continue;
+                if(place[nx].charAt(ny) == 'P') return false;
+                if(cur[2]+1 >= 2) continue;
+                q.offer(new int[]{nx, ny, cur[2]+1});
+                visited[nx][ny] = true;
             }
         }
         return true;
