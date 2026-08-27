@@ -1,76 +1,56 @@
 import java.util.*;
 class Solution {
-    class Pipe{
-        int to, type;
-        Pipe(int to, int type){
-            this.to = to;
-            this.type = type;
-        }
-    }
-    List<List<Pipe>> tree = new ArrayList<>();
-    int answer = 0, n, k, infection;
-    int[] orders;
+    int answer = 0;
+    List<List<Integer>> gr = new ArrayList<>();
+    int[][] types;
     public int solution(int n, int infection, int[][] edges, int k) {
-        this.n = n; this.k = k; this.infection = infection;
-        orders = new int[k]; //0 index
+        this.types = new int[n+1][n+1];
         for(int i = 0; i<=n; i++){
-            tree.add(new ArrayList<>());
+            gr.add(new ArrayList<>());
         }
         for(int[] edge : edges){
-            int x = edge[0];
-            int y = edge[1];
-            int type = edge[2];
-            tree.get(x).add(new Pipe(y, type));
-            tree.get(y).add(new Pipe(x, type));
+            gr.get(edge[0]).add(edge[1]);
+            gr.get(edge[1]).add(edge[0]);
+            types[edge[0]][edge[1]] = edge[2];
+            types[edge[1]][edge[0]] = edge[2];
         }
-        combi(0, -1);
+        
+        permute(infection, k, n, new int[k], 0);
         return answer;
     }
-    
-    //파이프 여닫기 경우의 수 구하기
-    public void combi(int depth, int last){
-        if(depth == k){
-            answer = Math.max(answer, simulation());
+    public void permute(int start, int k, int n, int[] order, int idx){
+        if(idx == k){
+            answer = Math.max(answer, infect(start, order, n, k));
             return;
         }
         for(int i = 1; i<=3; i++){
-            if(i == last) continue;
-            orders[depth] = i;
-            combi(depth+1, i);
+            order[idx] = i;
+            permute(start, k, n, order, idx+1);
         }
     }
-    
-    //만든 조합을 시뮬레이션 했을 때 몇 개를 감염시키는지 반환
-    public int simulation(){
+    public int infect(int start, int[] order, int n, int k){
         List<Integer> infected = new ArrayList<>();
-        infected.add(infection);
+        infected.add(start);
+        //파이프 개방 순서
         for(int i = 0; i<k; i++){
-            infect(orders[i], infected);
-        }
-        
-        return infected.size();
-    }
-    
-    public void infect(int type, List<Integer> infected){
-        Queue<Integer> q = new ArrayDeque<>();
-        boolean[] visited = new boolean[n+1];
-        for(int node : infected){
-            q.offer(node);
-            visited[node] = true;
-        }
-        
-        while(!q.isEmpty()){
-            int cur = q.poll();
-            
-            for(Pipe next : tree.get(cur)){
-                if(!visited[next.to] && next.type == type){
-                    infected.add(next.to);
-                    q.offer(next.to);
-                    visited[next.to] = true;
+            //탐색용 큐
+            Queue<Integer> q = new ArrayDeque<>(infected);
+            while(!q.isEmpty()){
+                //현재 노드
+                int cur = q.poll();
+                //현재 노드에서 갈 수 있는 모든 노드
+                for(int next : gr.get(cur)){
+                    //현재 열린 파이프와 이동할 파이프의 타입이 같고 && 이미 감염된 노드가 아니라면
+                    if(order[i] == types[cur][next] && infected.indexOf(next) == -1){
+                        //감염된 노드로 체크하고
+                        infected.add(next);
+                        //이동할 탐색 큐에 넣는다
+                        q.offer(next);
+                    }
                 }
             }
         }
+        //감염된 노드의 개수 반환
+        return infected.size();
     }
-   
 }
-//조합 구하기
