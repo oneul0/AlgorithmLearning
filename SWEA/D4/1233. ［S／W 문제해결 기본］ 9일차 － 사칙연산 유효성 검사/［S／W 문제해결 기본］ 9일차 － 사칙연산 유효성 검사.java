@@ -18,9 +18,7 @@ class Solution
             for(int i = 0; i<N; i++){
                 st = new StringTokenizer(br.readLine());
                 int cur = Integer.parseInt(st.nextToken());
-                String val = st.nextToken();
-                
-                boolean isNumber = val.chars().allMatch(Character::isDigit);
+                boolean isNumber = st.nextToken().chars().allMatch(Character::isDigit);
                 boolean hasChild = st.hasMoreTokens();
                 
                 if(isNumber && hasChild || !isNumber && !hasChild) {
