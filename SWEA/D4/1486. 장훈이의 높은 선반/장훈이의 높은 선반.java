@@ -26,25 +26,20 @@ class Solution
             for(int i = 0; i<N; i++){
                 arr[i] = Integer.parseInt(st.nextToken());
             }
-            dfs(0, 0, 0);
+            dfs(0, 0);
             bw.write("#"+test_case+" "+minDiff+"\n");
 		}
         bw.flush();
         br.close();
         bw.close();
 	}
-    public static void dfs(int idx, int sum, int mask){
+    public static void dfs(int idx, int sum){
         if(sum >= B) {
             minDiff = Math.min(minDiff, Math.abs(B-sum));
             return;
         }
         for(int i = idx; i<N; i++){
-            if((mask & (1<<i)) == 0){
-                mask |= (1<<i);
-                dfs(i+1, sum+arr[i], mask);
-                mask &= ~(1<<i);
-            }
-            
+            dfs(i+1, sum+arr[i]);
         }
     }
 }
