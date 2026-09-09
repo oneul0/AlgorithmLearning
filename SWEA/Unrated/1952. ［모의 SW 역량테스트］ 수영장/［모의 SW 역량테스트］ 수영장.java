@@ -3,6 +3,8 @@ import java.io.*;
 
 class Solution
 {
+    static int min;
+    static int[] fee, arr;
 	public static void main(String args[]) throws Exception
 	{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,39 +16,40 @@ class Solution
 		{
             bw.write("#"+test_case+" ");
 			st = new StringTokenizer(br.readLine());
-            int[] fee = new int[4]; //1d 1m 3m 1y
+            min = Integer.MAX_VALUE;
+            fee = new int[4]; //1d 1m 3m 1y
             for(int i = 0; i<4; i++){
                 fee[i] = Integer.parseInt(st.nextToken());
             }
             st = new StringTokenizer(br.readLine());
-            int[] arr = new int[12];
+            arr = new int[12];
             for(int i = 0; i<12; i++){
                 arr[i] = Integer.parseInt(st.nextToken());
             }
-            int[] dp = new int[13];
-
-            for (int i = 11; i >= 0; i--) {
-                int daily = arr[i] * fee[0] + dp[i + 1];
-                int oneMonth = fee[1] + dp[i + 1];
-
-                int threeMonth = fee[2];
-                if (i + 3 < 12) {
-                    threeMonth += dp[i + 3];
-                }
-
-                dp[i] = Math.min(daily, Math.min(oneMonth, threeMonth));
-            }
-            int answer = Math.min(dp[0], fee[3]);
+			backtrack(0, 0);
+            int answer = Math.min(min, fee[3]);
             bw.write(answer+"\n");
 		}
         bw.flush();
         br.close();
         bw.close();
 	}
+    
+public static void backtrack(int charge, int cur) {
+        if (charge >= min)  return;
+
+        if (cur >= 12) {
+            min = Math.min(min, charge);
+            return;
+        }
+
+        if (arr[cur] == 0) {
+            backtrack(charge, cur + 1);
+            return;
+        }
+
+        backtrack(charge + arr[cur] * fee[0], cur + 1);
+        backtrack(charge + fee[1], cur + 1);
+        backtrack(charge + fee[2], cur + 3);
+    }
 }
-
-/*
-각각의 달에 이용할 날은
-일일권으로 끊냐 1달, 3달 이용권으로 끊냐 차이
-
-*/
