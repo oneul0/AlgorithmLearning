@@ -25,7 +25,6 @@ class Solution
     public static int solve(int row, int col, int rd, int ld, int cnt, int n){
         int result = 0;
         if(row == n) return 1;
-        //result += solve(row+1, col, rd, ld, cnt, n);
         for(int c = 0; c<n; c++){
             int rdIdx = (row-c)+n;
             int ldIdx = (row+c);
