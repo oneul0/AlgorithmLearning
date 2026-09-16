@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.io.*;
 
@@ -25,39 +24,37 @@ class Solution
 				}
 			}
 			
-			int result = -1;
+			int result = 0;
 			for(int i = 0; i<N; i++) {
-				for(int j =0 ; j<N; j++) {
+				for(int j = 0; j<N; j++) {
 					sx = i; sy = j;
 					boolean[] visited = new boolean[101];
 					visited[arr[i][j]] = true;
-					result  = Math.max(result, dfs(i, j, 0, 1, visited));//x, y, dir, depth, visited
+					result = Math.max(result,  dfs(i, j, 0, 1, arr, visited));
 				}
 			}
-			bw.write("#"+test_case+" "+result+"\n");
+			bw.write("#"+test_case+" "+(result == 0 ? -1 : result)+"\n");
 		}
 		bw.flush();
 		br.close();
 		bw.close();
 	}
 	
-	public static int dfs(int x, int y, int dir, int depth, boolean[] visited) {
-		int result = -1;
-		int nx = x + dx[dir];
-		int ny = y + dy[dir];
+	public static int dfs(int x, int y, int d, int depth, int[][] arr, boolean[] visited) {
+		int nx = x + dx[d];
+		int ny = y + dy[d];
+		
 		if(nx == sx && ny == sy) {
-			if(dir == 3) return depth;
+			if(d == 3) return depth;
 			return -1;
 		}
-		if(!isValid(nx, ny)) return -1;
-		if(visited[arr[nx][ny]]) return -1;
 		
+		if(!isValid(nx, ny) || visited[arr[nx][ny]]) return -1;
+		int result = -1;
 		visited[arr[nx][ny]] = true;
-		//같은 방향으로 이동
-		result = Math.max(result, dfs(nx, ny, dir, depth+1, visited));
-		if(dir < 3) {
-			//꺾어
-			result = Math.max(result, dfs(nx, ny, dir+1, depth+1, visited));
+		result = Math.max(result, dfs(nx, ny, d, depth+1, arr, visited));
+		if(d < 3) {
+			result = Math.max(result, dfs(nx, ny, d+1, depth+1, arr, visited));
 		}
 		visited[arr[nx][ny]] = false;
 		
@@ -67,4 +64,5 @@ class Solution
 	public static boolean isValid(int x, int y) {
 		return (x>=0 && y>=0 && x<N && y<N);
 	}
+	
 }
