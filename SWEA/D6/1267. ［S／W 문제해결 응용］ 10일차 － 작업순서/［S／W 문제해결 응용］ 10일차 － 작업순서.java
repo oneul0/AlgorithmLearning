@@ -70,16 +70,7 @@ class Solution
 				}
 			}
 		}
-		while(idx < V) {
-			for(int i = 1; i<=V; i++) {
-				if(visited[i]) continue;
-				inbound[i]--;
-				if(inbound[i] == 0) {
-					result[idx++] = i;
-					visited[i] = true;
-				}
-			}
-		}
+
 		return result;
 	}
 }
