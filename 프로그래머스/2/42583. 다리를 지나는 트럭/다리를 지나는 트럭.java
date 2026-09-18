@@ -1,39 +1,43 @@
 import java.util.*;
 class Solution {
+    class Truck{
+        int weight;
+        int enteredAt;
+        Truck(int w, int e){
+            this.weight = w;
+            this.enteredAt = e;
+        }
+    }
     public int solution(int bridge_length, int weight, int[] truck_weights) {
-        int answer = 0, bWeight = 0, idx = 0;
-        Deque<Truck> br = new ArrayDeque<>();
+        int time = 0;
+        int curWeight = 0;
+        int nextTruckIdx = 0;
+        Queue<Truck> bridge = new ArrayDeque<>();
         
-        while(idx < truck_weights.length || !br.isEmpty()){
-            answer++;
+        while(nextTruckIdx < truck_weights.length || !bridge.isEmpty()){
+            time++;
             
-            if(!br.isEmpty()){
-                Truck cur = br.peek();
-                //다리 끝
-                if(answer - cur.pos >= bridge_length){
-                    bWeight -= cur.w; //다리에서 트럭 무게 제최
-                    br.remove(); //다리에서 제거
+            if(!bridge.isEmpty()){
+                Truck first = bridge.peek();
+                
+                if(time  - first.enteredAt >= bridge_length){
+                    curWeight-=first.weight;
+                    bridge.poll();
                 }
             }
             
-            //제거할 트럭 제거하고 다리에 올라올 수 있는 트럭이 있는지 확인
-            if(idx < truck_weights.length){
-                if(bWeight + truck_weights[idx] <= weight && br.size() < bridge_length){
-                    br.add(new Truck(truck_weights[idx], answer)); //다리에 트럭 추가
-                    bWeight += truck_weights[idx];
-                    idx++; //몇 번째 트럭까지 올라왔는지 최신화
+            if(nextTruckIdx < truck_weights.length){
+                int nextTruckWeight = truck_weights[nextTruckIdx];
+                if(curWeight +nextTruckWeight <= weight){
+                    bridge.offer(new Truck(nextTruckWeight, time));
+
+                    curWeight += nextTruckWeight;
+                    nextTruckIdx++;
                 }    
             }
+            
         }
         
-        return answer;
-    }
-}
-
-class Truck {
-    int w, pos;
-    Truck(int w, int pos){
-        this.w = w;
-        this.pos = pos;
+        return time;
     }
 }
