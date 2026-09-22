@@ -20,7 +20,6 @@ public class Main {
             for(int j = 0; j<n; j++){
                 if(grid[i][j] == 1 && !visited[i][j]) {
                     result = 0;
-                    visited[i][j] = true;
                     dfs(i, j);
                     list.add(result);
                 }
@@ -38,12 +37,12 @@ public class Main {
 
     public static void dfs(int x, int y){
         result+=1;
+        visited[x][y] = true;
         for(int i = 0; i<4; i++){
             int nx = x + dx[i];
             int ny = y + dy[i];
             if(nx<0 || ny<0 || nx>=n || ny>=n) continue;
             if(visited[nx][ny] || grid[nx][ny] == 0) continue;
-            visited[nx][ny] = true;
             dfs(nx, ny);
         }
     }
