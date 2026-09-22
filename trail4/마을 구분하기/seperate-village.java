@@ -14,22 +14,21 @@ public class Main {
                 grid[i][j] = sc.nextInt();
                 
         
-        List<Integer> list = new ArrayList<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         visited = new boolean[n][n];
         for(int i =0 ; i<n; i++){
             for(int j = 0; j<n; j++){
                 if(grid[i][j] == 1 && !visited[i][j]) {
                     result = 0;
                     dfs(i, j);
-                    list.add(result);
+                    pq.offer(result);
                 }
             }
         }
-        Collections.sort(list);
         StringBuilder sb = new StringBuilder();
-        sb.append(list.size()).append("\n");
-        for(int i = 0; i<list.size(); i++){
-            sb.append(list.get(i)).append("\n");
+        sb.append(pq.size()).append("\n");
+        while(!pq.isEmpty()){
+            sb.append(pq.poll()).append("\n");
         }
         System.out.print(sb.toString());
 
