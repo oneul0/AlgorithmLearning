@@ -4,6 +4,16 @@ import java.io.*;
 
 class Solution
 {
+	static class Pair {
+		int from, to;
+		long dist;
+		Pair(int from, int to, long dist){
+			this.from = from;
+			this.to = to;
+			this.dist = dist;
+		}
+	}
+	static int[] parent;
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringTokenizer st;
@@ -15,6 +25,10 @@ class Solution
 		{
 			bw.write("#"+test_case+" ");
 			int n = Integer.parseInt(br.readLine());
+			parent = new int[n];
+			for(int i = 0; i<n; i++) {
+				parent[i] = i;
+			}
 			int[] x = new int[n];
 			int[] y = new int[n];
 			st = new StringTokenizer(br.readLine());
@@ -26,7 +40,7 @@ class Solution
 				y[i] = Integer.parseInt(st.nextToken());
 			}
 			double E = Double.parseDouble(br.readLine());
-			long result = prim(x, y, n, E);
+			long result = kruskal(x, y, n, E, parent);
 			bw.write(result+"\n");
 		}
 		bw.flush();
@@ -34,40 +48,43 @@ class Solution
 		bw.close();
 	}
 	
-	public static long prim(int[] x, int[] y, int n, double E) {
-		long[] minEdge = new long[n];
-		Arrays.fill(minEdge, Long.MAX_VALUE);
-		minEdge[0] = 0;
-		boolean[] visited = new boolean[n];
-		long total = 0;
+	public static int find(int x) {
+		if(x == parent[x]) return x;
+		return parent[x] = find(parent[x]);
+	}
+	
+	public static void union(int a, int b) {
+		a = find(a);
+		b = find(b);
+		
+		if(a>b) parent[a] =b;
+		else parent[b] = a;
+	}
+	public static long kruskal(int[] x, int[] y, int n, double E, int[] parent) {
+		int count = 0;
+		long answer = 0;
+		List<Pair> edge = new ArrayList<>();
 		for(int i = 0; i<n; i++) {
-			int minNode = -1;
-			long minDist = Long.MAX_VALUE;
-			
-			for(int j = 0; j<n; j++) {
-				if(!visited[j] && minEdge[j] < minDist) {
-					minDist = minEdge[j];
-					minNode = j;
-				}
-			}
-
-			visited[minNode] = true;
-			total+=minDist;
-			
-			for(int j = 0; j<n; j++) {
-				if(!visited[j]) {
-					long dx = (long) x[minNode] - x[j];
-					long dy = (long) y[minNode] - y[j];
-					
-					long dist = dx*dx + dy*dy;
-					
-					if(dist < minEdge[j]) {
-						minEdge[j] = dist;
-					}
-				}
+			for(int j = i+1; j<n; j++) {
+				long dx = (long) x[i] - x[j];
+				long dy = (long) y[i] - y[j];
+				long dist= dx*dx + dy*dy;
+				edge.add(new Pair(i, j, dist));
 			}
 		}
+		Collections.sort(edge, (a,b) -> Long.compare(a.dist, b.dist));
 		
-		return Math.round(total * E);
+		for(Pair next : edge) {
+			if(find(next.from) == find(next.to)) continue;
+			
+			union(next.from, next.to);
+			
+			answer += next.dist;
+			count++;
+			
+			if(count == n-1) break;
+		}
+		return Math.round(answer*E);
 	}
+
 }
