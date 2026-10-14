@@ -26,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0219-contains-duplicate-ii](https://github.com/oneul0/AlgorithmLearning/tree/master/0219-contains-duplicate-ii) |
 | [0238-product-of-array-except-self](https://github.com/oneul0/AlgorithmLearning/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/oneul0/AlgorithmLearning/tree/master/0239-sliding-window-maximum) |
+| [0300-longest-increasing-subsequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0300-longest-increasing-subsequence) |
 | [0347-top-k-frequent-elements](https://github.com/oneul0/AlgorithmLearning/tree/master/0347-top-k-frequent-elements) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/oneul0/AlgorithmLearning/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
@@ -69,6 +70,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0085-maximal-rectangle](https://github.com/oneul0/AlgorithmLearning/tree/master/0085-maximal-rectangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/oneul0/AlgorithmLearning/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/oneul0/AlgorithmLearning/tree/master/0152-maximum-product-subarray) |
+| [0300-longest-increasing-subsequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0300-longest-increasing-subsequence) |
 | [1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/oneul0/AlgorithmLearning/tree/master/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [2472-maximum-number-of-non-overlapping-palindrome-substrings](https://github.com/oneul0/AlgorithmLearning/tree/master/2472-maximum-number-of-non-overlapping-palindrome-substrings) |
 | [2571-minimum-operations-to-reduce-an-integer-to-0](https://github.com/oneul0/AlgorithmLearning/tree/master/2571-minimum-operations-to-reduce-an-integer-to-0) |
@@ -299,6 +301,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/oneul0/AlgorithmLearning/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/oneul0/AlgorithmLearning/tree/master/0033-search-in-rotated-sorted-array) |
+| [0300-longest-increasing-subsequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0300-longest-increasing-subsequence) |
 | [0493-reverse-pairs](https://github.com/oneul0/AlgorithmLearning/tree/master/0493-reverse-pairs) |
 | [0633-sum-of-square-numbers](https://github.com/oneul0/AlgorithmLearning/tree/master/0633-sum-of-square-numbers) |
 | [0704-binary-search](https://github.com/oneul0/AlgorithmLearning/tree/master/0704-binary-search) |
@@ -478,4 +481,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/oneul0/AlgorithmLearning/tree/master/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [2203-minimum-weighted-subgraph-with-the-required-paths](https://github.com/oneul0/AlgorithmLearning/tree/master/2203-minimum-weighted-subgraph-with-the-required-paths) |
 | [2642-design-graph-with-shortest-path-calculator](https://github.com/oneul0/AlgorithmLearning/tree/master/2642-design-graph-with-shortest-path-calculator) |
+## Longest Increasing Subsequence
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0300-longest-increasing-subsequence) |
 <!---LeetCode Topics End-->
