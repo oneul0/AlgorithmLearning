@@ -1,5 +1,21 @@
 import java.util.*;
 class Solution {
+
+    class Node implements Comparable<Node>{
+        int x, y, cost, lastDirection;
+        Node(int x, int y, int lastDirection, int cost){
+            this.x = x;
+            this.y = y;
+            this.lastDirection = lastDirection;
+            this.cost = cost;
+        }
+
+        @Override
+        public int compareTo(Node o){
+            return Integer.compare(this.cost, o.cost);
+        }
+    }
+    
     int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
     int answer = Integer.MAX_VALUE, N = 0;
     public int solution(int[][] board) {
@@ -47,17 +63,3 @@ class Solution {
     }
 }
 
-class Node implements Comparable<Node>{
-    int x, y, cost, lastDirection;
-    Node(int x, int y, int lastDirection, int cost){
-        this.x = x;
-        this.y = y;
-        this.lastDirection = lastDirection;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(Node o){
-        return Integer.compare(this.cost, o.cost);
-    }
-}
