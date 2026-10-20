@@ -10,7 +10,7 @@ class Solution {
     }
     
     public int solution(int k, int n, int[][] reqs) {
-        List<ArrayList<Node>> list = new ArrayList<>();
+        List<List<Node>> list = new ArrayList<>();
         for(int i = 0; i <= n; i++) {
             list.add(new ArrayList<>());
         }
