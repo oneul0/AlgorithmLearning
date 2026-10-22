@@ -1,51 +1,51 @@
 import java.util.*;
-
-public class Solution {
-    Set<Set<Integer>> answerSet = new HashSet<>();
-    List<Integer>[] db;
-
+class Solution {
     public int solution(String[] user_id, String[] banned_id) {
-        int n = banned_id.length;
-        db = new ArrayList[n];
-
-        // 1. banned_id[i]에 대해 매칭 가능한 user_id 인덱스를 db[i]에 저장
-        for (int i = 0; i < n; i++) {
-            db[i] = new ArrayList<>();
-            for (int j = 0; j < user_id.length; j++) {
-                if (isMatch(user_id[j], banned_id[i])) {
-                    db[i].add(j);
+        List<Integer> masked_idx = new ArrayList<>();
+        for(String id : banned_id){
+            int mask = 0;
+            for(int i = 0; i < id.length(); i++){
+                if(id.charAt(i) == '*'){
+                    mask |= (1 << i);
                 }
             }
+            masked_idx.add(mask);
         }
 
-        // 2. DFS로 가능한 조합 탐색
-        dfs(0, new HashSet<>());
+        Set<Integer> states = new HashSet<>();
+        states.add(0);
 
-        return answerSet.size();
-    }
+        for(int j = 0; j < banned_id.length; j++){
+            Set<Integer> next = new HashSet<>();
 
-    // banned pattern과 user id가 매칭되는지 확인
-    private boolean isMatch(String user, String ban) {
-        if (user.length() != ban.length()) return false;
-        for (int i = 0; i < user.length(); i++) {
-            if (ban.charAt(i) != '*' && user.charAt(i) != ban.charAt(i)) return false;
+            for(int state : states){
+                for(int i = 0; i < user_id.length; i++){
+                    //이미 사용된 아이디 건너뛰기
+                    if((state & (1 << i)) != 0) continue;
+
+                    //길이가 다르면 매칭 불가
+                    if(user_id[i].length() != banned_id[j].length())
+                        continue;
+
+                    StringBuilder cur = new StringBuilder(user_id[i]);
+
+                    //* 위치에 마스킹
+                    for(int m = 0; m < cur.length(); m++){
+                        if((masked_idx.get(j) & (1 << m)) != 0){
+                            cur.setCharAt(m, '*');
+                        }
+                    }
+
+                    //새 조합 추가
+                    if(cur.toString().equals(banned_id[j])){
+                        next.add(state | (1 << i));
+                    }
+                }
+            }
+
+            states = next;
         }
-        return true;
-    }
 
-    // DFS 탐색, depth는 현재 ban 인덱스, selected는 현재까지 선택한 user 인덱스
-    private void dfs(int depth, Set<Integer> selected) {
-        if (depth == db.length) {
-            answerSet.add(new HashSet<>(selected));
-            return;
-        }
-
-        for (int idx : db[depth]) {
-            if (selected.contains(idx)) continue;
-
-            selected.add(idx);
-            dfs(depth + 1, selected);
-            selected.remove(idx);
-        }
+        return states.size();
     }
 }
