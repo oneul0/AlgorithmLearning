@@ -5,8 +5,7 @@ class Solution {
         int area = brown+yellow;
         
         //노랑이 존재하기 위한 최소 높이와 너비
-        for(int i = 3; i<=area; i++){
-            int c = i;
+        for(int c = 3; c<=area; c++){
             int r = area/c;
             
             if(r < 3) continue;
