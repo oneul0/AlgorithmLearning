@@ -1,53 +1,58 @@
-import java.util.*;
+
 class Solution {
-    class Pair implements Comparable<Pair>{
-        String name;
-        int lastSeen;
-        Pair(String name, int lastSeen){
-            this.name = name.toLowerCase();
-            this.lastSeen = lastSeen;
-        }
-        @Override
-        public boolean equals(Object o){
-            if(this == o) return true;
-            if(!(o instanceof Pair)) return false;
-            Pair other = (Pair) o;
-            return Objects.equals(this.name, other.name);
-        }
-        @Override
-        public int hashCode(){
-            return Objects.hash(name);
-        }
-        @Override
-        public int compareTo(Pair p){
-            return p.lastSeen - this.lastSeen;
-        }
-    }
     public int solution(int cacheSize, String[] cities) {
-        if(cacheSize == 0) return 5 * cities.length;
+        if (cacheSize == 0) return cities.length * 5;
+
         int answer = 0;
-        List<Pair> cache = new ArrayList<>();
-        for(int i = 0; i<cities.length; i++){
-            int idx = cache.indexOf(new Pair(cities[i], 0));
-            //cache hit
-            if(idx != -1){
-                cache.get(idx).lastSeen = i;
+        int tail = 0;
+
+        String[] cache = new String[cacheSize];
+        int[] lastSeen = new int[cacheSize];
+
+        for (int i = 0; i < cities.length; i++) {
+            String city = cities[i].toLowerCase();
+
+            int idx = indexOf(cache, city, tail);
+
+            // Cache Hit
+            if (idx != -1) {
+                lastSeen[idx] = i;
                 answer += 1;
             }
-            //cache miss
-            else{
-                answer+=5;
-                //cache full
-                if(cache.size()>=cacheSize){
-                    Collections.sort(cache);
-                    cache.remove(cache.size()-1);
-                    cache.add(new Pair(cities[i], i));
+            // Cache Miss
+            else {
+                if (tail < cacheSize) {
+                    cache[tail] = city;
+                    lastSeen[tail] = i;
+                    tail++;
+                } else {
+                    int lruIdx = findLRUIdx(lastSeen, tail);
+                    cache[lruIdx] = city;
+                    lastSeen[lruIdx] = i;
                 }
-                else{
-                    cache.add(new Pair(cities[i], i));
-                }
+                answer += 5;
             }
         }
+
         return answer;
+    }
+
+    public int findLRUIdx(int[] arr, int size) {
+        int lruIdx = 0;
+
+        for (int i = 1; i < size; i++) {
+            if (arr[i] < arr[lruIdx]) {
+                lruIdx = i;
+            }
+        }
+
+        return lruIdx;
+    }
+
+    public int indexOf(String[] arr, String target, int size) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i].equals(target)) return i;
+        }
+        return -1;
     }
 }
