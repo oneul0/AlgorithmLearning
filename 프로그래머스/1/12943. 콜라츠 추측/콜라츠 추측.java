@@ -1,12 +1,11 @@
 class Solution {
     public int solution(int num) {
-        int cnt = 0;
-        while(num != 1 && cnt<=500){
-            if(num%2==1) num = (num*3)+1;
-            else num/=2;
-            cnt++;
+        long tmp = num;
+        for(int i = 0; i<500; i++){
+            if(tmp == 1) return i;
+            if(tmp % 2 == 0) tmp /= 2;
+            else tmp = (tmp * 3)+1;
         }
-        
-        return cnt <=500 ? cnt : -1;
+        return -1;
     }
 }
