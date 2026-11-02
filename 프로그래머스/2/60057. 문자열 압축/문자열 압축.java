@@ -1,41 +1,35 @@
 import java.util.*;
 class Solution {
     public int solution(String s) {
-        int answer = s.length();
-        for(int i = 1; i<= s.length(); i++){
-            answer = Math.min(answer, compress(s,i));
+        int n = s.length();
+        int answer = n;
+        for(int i = 1; i<=n/2; i++){
+            answer = Math.min(answer, compressedLen(s, i, n));
         }
         return answer;
     }
     
-    int compress(String text, int length){
-        //압축 단위 단어 저장 리스트
-        List<String> words = new ArrayList<>();
-        for(int i = 0; i<text.length(); i+=length){
-            //length에 따른 자르는 문자 단위
-            words.add(text.substring(i, Math.min(text.length(), i+length)));
+    public int compressedLen(String s, int len, int n){
+        Queue<String> q = new ArrayDeque<>();
+        for(int i = 0; i<n; i+=len){
+            q.offer(s.substring(i, Math.min(i+len, n)));
         }
-        StringBuilder compressedText = new StringBuilder();
-        String prevWord = "";
-        int cnt = 0;
-        for(String word: words){
-            if(word.equals(prevWord)){
-                cnt++;
+        StringBuilder sb = new StringBuilder();
+        while(!q.isEmpty()){
+            String cur = q.poll();
+            int count = 1;
+            while(cur.equals(q.peek())){
+                count++;
+                q.poll();
             }
-            else{
-                if(cnt>1){
-                    compressedText.append(cnt+"");
-                }
-                compressedText.append(prevWord);
-                prevWord = word;
-                cnt = 1;
+            if(count > 1){
+                sb.append(count);
             }
+            sb.append(cur);
         }
-        if(cnt>1){
-            compressedText.append(cnt+"");
-        }
-        compressedText.append(prevWord);
-        return compressedText.toString().length();
-        
+        return sb.length();
     }
 }
+//길이를 하나씩 늘려가며 압축할 수 있는 부분을 찾는다
+//다 잘라서 넣고 압축 후 길이 측정
+
