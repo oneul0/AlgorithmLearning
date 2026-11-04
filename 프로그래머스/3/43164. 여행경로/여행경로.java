@@ -2,9 +2,7 @@ import java.util.*;
 class Solution {
     public String[] solution(String[][] tickets) {
         Arrays.sort(tickets, (a, b) -> {
-            if (a[1].compareTo(b[1]) != 0) {
-                return a[1].compareTo(b[1]);
-            }
+            if (a[1].compareTo(b[1]) != 0) return a[1].compareTo(b[1]);
             return a[0].compareTo(b[0]);
         });
 
@@ -29,9 +27,7 @@ class Solution {
                 chk[i] = true;
 
                 List<String> result = dfs(tickets, new ArrayList<>(ans), chk, tickets[i][1]);
-                if (result != null) {
-                    return result;
-                }
+                if (result != null) return result;
 
                 chk[i] = false;
             }
