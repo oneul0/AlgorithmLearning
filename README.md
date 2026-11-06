@@ -485,4 +485,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/oneul0/AlgorithmLearning/tree/master/0300-longest-increasing-subsequence) |
+## Database
+|  |
+| ------- |
+| [0185-department-top-three-salaries](https://github.com/oneul0/AlgorithmLearning/tree/master/0185-department-top-three-salaries) |
 <!---LeetCode Topics End-->
